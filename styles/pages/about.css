@@ -1,5 +1,5 @@
+@import '../common/variables.css';
+@import '../common/text.css';
+@import '../common/layouts.css';
 @import '../templates/header.css';
 @import '../templates/footer.css';
-@import '../common/layouts.css';
-@import '../common/text.css';
-@import '../common/variabels.css';
