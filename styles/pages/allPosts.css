@@ -11,3 +11,7 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;  
 }
+
+.hidden {
+  display: none;
+}

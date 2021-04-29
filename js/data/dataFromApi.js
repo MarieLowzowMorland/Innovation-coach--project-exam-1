@@ -10,9 +10,14 @@ export const findPostById = async (id) => {
   }
 };
 
-export const findPosts = async () => {
+export const findPosts = async (pageNumber) => {
+  const page = pageNumber || 1;
   try {
-    const response = await fetch(`${apiPostsBaseUrl}?_embed`);
+    const response = await fetch(`${apiPostsBaseUrl}?_embed&page=${page}`);
+    if(response.status < 200 || response.status > 300){
+      throw new Error("Error, maybe no more results");
+    }
+
     const postsFromWP = await response.json();
     return postsFromWP.map(postInfo);
   } catch (error) {

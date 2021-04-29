@@ -11,7 +11,20 @@
   </head>
   <body>
     <main>
-      Index/All posts
+      <div id="posts-container">
+        <form id="search-container">
+          <label for="">Looking for a specific topic?</label>
+          <input id="search-text" name="text" />
+          <select id="search-topic" name="topic">
+            <option value="" selected>All topics</option>
+            <option value="17">Effectuation</option>
+            <option value="9">Risk</option>
+            <option value="24">Lorem Ipsum</option>
+          </select>
+          <button id="search-button">Search</button>
+        </form>
+      </div>
+      <button id="more-posts">View more posts</button>
     </main>
     <script src="./js/pages/allPosts.js" type="module"></script>
   </body>
