@@ -6,7 +6,7 @@ const addFooterForPage = () => {
 
 const footerTemplate = () => /*template*/`
   <footer>
-    Footer
+    <p>COPYRIGHT © Marie Lowzow Morland</p>
   </footer>`;
 
 export default addFooterForPage;

@@ -137,12 +137,12 @@ nav li a:hover{
     border-radius: 0;
     margin: 0;
     max-width: 100%;
-    width: 1000px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     border-bottom: 1px solid var(--text);
-    padding: 0 50px 10px;
+    width: 700px;
+    padding: 0 30px 10px;
   }
 
   nav li {
@@ -195,5 +195,27 @@ nav li a:hover{
   #menu {
     display: flex;
     justify-content: center;
+  }
+}
+
+
+@media screen and (min-width: 1025px) { 
+  nav ul {
+    width: 900px;
+    padding: 0 50px 10px;
+  }
+}
+
+@media screen and (min-width: 1300px) { 
+  nav ul {
+    width: 1000px;
+    padding: 0 70px 10px;
+  }
+}
+
+@media screen and (min-width: 1600px) { 
+  nav ul {
+    width: 1400px;
+    padding: 0 100px 10px;
   }
 }
