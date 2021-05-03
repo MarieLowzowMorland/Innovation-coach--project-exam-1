@@ -3,3 +3,14 @@
 @import '../common/layouts.css';
 @import '../templates/header.css';
 @import '../templates/footer.css';
+
+main {
+  max-width: 35rem;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  object-fit: contain;
+  height: auto;
+}

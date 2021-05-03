@@ -1,18 +1,9 @@
 footer {
-  background-image: var(--gradient-tilted);
-  background-color: var(--gradient-bg);
+  background-color: var(--primary-bg);
   color: var(--text-white);
-  margin-bottom: 0;
+  margin-top: 50px;
 }
 
 footer p {
-  padding: 10px;
-  margin-bottom: 0;
-  margin-left: 40px;
-}
-
-@media screen and (min-width: 768px) { 
-  footer {
-    border-radius: 50px 0 0px 0px;
-  }
+  margin: 5px 0 5px 40px;
 }

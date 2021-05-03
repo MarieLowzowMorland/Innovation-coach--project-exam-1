@@ -12,7 +12,7 @@ const postToHtml = (post) => {
 
   return /*template*/`
     <div>
-      <p>${dateString}</p>
+      <p class="date">${dateString}</p>
       <h2>${title}</h2>
       ${content}
     </div>

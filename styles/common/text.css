@@ -23,3 +23,7 @@ button {
   padding: 15px;
   cursor: pointer;
 }
+
+.date {
+  color: var(--primary);
+}

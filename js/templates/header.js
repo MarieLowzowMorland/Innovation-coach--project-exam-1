@@ -46,7 +46,6 @@ const toggleMenu = (event) => {
   event.stopPropagation();
   event.currentTarget.blur();
   document.getElementById("menu").classList.toggle("open-menu");
-  document.querySelector("#menuline h1").classList.toggle("screen-reader-only");
 }
 
 const addHeaderForPage = (selectedPage) => {  
@@ -65,16 +64,10 @@ const link = ( selectedPage, linkToPage ) =>  /*template*/ `
     </a>
     <span class="circle"></span>
   </li>`;
+  
 
 const headerTemplate = ( selectedPage ) => /*template*/ `
-  <header>
-    <div class="banner mobile-hidden">
-      <div>
-        <p class="blog-name">Innovation Coach</p>
-        <p class="slogan">Help your ideas come alive</p>
-      </div>
-      <img src="images/Hovedbilde.jpg" height="200" class="header-image"></div>
-    </div>
+  <header class="${selectedPage === pageNames.HOME ? "homepage" : ""}">
     <nav>
       <div id="menu">
         <button id="menuline" class="tablet-hidden">
@@ -89,6 +82,14 @@ const headerTemplate = ( selectedPage ) => /*template*/ `
           ${link(selectedPage, pageNames.CONTACT)}
         </ul>
     </nav>
+    <div class="banner mobile-hidden">
+      <div>
+        <p class="blog-name">Innovation Coach</p>
+        <p class="slogan">Help your ideas come alive</p>
+        <a class="cta" href="allPosts.html"> See newest articles </a>
+      </div>
+      <img src="images/Hovedbilde.jpg" height="200" class="header-image"></div>
+    </div>
   </header>`;
       
 

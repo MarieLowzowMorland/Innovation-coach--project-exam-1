@@ -1,13 +1,13 @@
 :root {
   --gradient: linear-gradient(to bottom, #54a4ea, #4392d4, #3181be, #1d70a8, #006093);
-  --gradient-top: #54a4ea;
-  --gradient-bg: #1d70a8;
-  --gradient-hover: linear-gradient(to bottom, #4494da, #3382c4, #2171ae, #0d6098, #007083);
-  --gradient-hover-bg: #0d6098;
-  --gradient-tilted: linear-gradient(to left bottom, #54a4ea, #4392d4, #3181be, #1d70a8, #006093);
-  --primary:#1d70a8;
+  --gradient-bg: #127cbe;
+  --primary:#127cbe;
+  --primary-hover:#707070;
+  --primary-bg:#127cbe;
+  --primary-hover-bg:#07314B;
   --text: #717171;
   --text-white: #ffffff;
+  --secondary-bg: #ffffff;
 
   --header-font: century-gothic, sans-serif;
   --secondary-font: freight-macro-pro, serif;
