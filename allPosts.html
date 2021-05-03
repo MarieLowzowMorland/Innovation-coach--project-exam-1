@@ -8,11 +8,12 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="./styles/pages/allPosts.css" rel="stylesheet" type="text/CSS" />
+    <link rel="stylesheet" href="https://use.typekit.net/qcp8twi.css">
   </head>
   <body>
     <main>
       <div id="posts-container">
-        <form id="search-container">
+        <form id="search-container" action="allPosts.html">
           <label for="">Looking for a specific topic?</label>
           <input id="search-text" name="text" />
           <select id="search-topic" name="topic">
@@ -21,7 +22,7 @@
             <option value="9">Risk</option>
             <option value="24">Lorem Ipsum</option>
           </select>
-          <button id="search-button">Search</button>
+          <button type="submit" id="search-button">Search</button>
         </form>
       </div>
       <button id="more-posts">View more posts</button>

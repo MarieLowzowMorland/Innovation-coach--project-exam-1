@@ -1,0 +1,14 @@
+:root {
+  --gradient: linear-gradient(to bottom, #54a4ea, #4392d4, #3181be, #1d70a8, #006093);
+  --gradient-top: #54a4ea;
+  --gradient-bg: #1d70a8;
+  --gradient-hover: linear-gradient(to bottom, #4494da, #3382c4, #2171ae, #0d6098, #007083);
+  --gradient-hover-bg: #0d6098;
+  --primary:#1d70a8;
+  --text: #717171;
+  --text-white: #ffffff;
+
+  --header-font: century-gothic, sans-serif;
+  --secondary-font: freight-macro-pro, serif;
+  --text-font: Helvetica, Arial, sans-serif;
+}   

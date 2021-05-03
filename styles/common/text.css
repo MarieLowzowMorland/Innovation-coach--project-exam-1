@@ -1,0 +1,25 @@
+html {
+  font-family: var(--text-font);
+  color: var(--text);
+}
+
+p {
+  max-width: 35rem;
+  margin: 1.15rem 0;
+  line-height: 1.5rem;
+}
+
+h1, h2 {
+  font-family: var(--header-font);
+  font-weight: 400;
+  font-style: normal;
+}
+
+button {
+  cursor: pointer;
+}
+
+.discrete-button {
+  padding: 15px;
+  cursor: pointer;
+}

@@ -1,4 +1,199 @@
-.active {
-  font-weight: bold;
-  color: crimson;
+nav.stick-to-top {
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+}
+
+#menuline{
+  background-color: var(--gradient-bg);
+  background-image: var(--gradient);
+  border: none;
+  border-radius: 0 0 20px 20px;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#menuline:focus,
+#menuline:hover{
+  background-color: var(--gradient-hover-bg);
+  background-image: var(--gradient-hover);
+}
+
+.open-menu #menuline{
+  border-radius: 0;
+  background-image: none;
+  background-color: var(--gradient-top);
+}
+
+.open-menu #menuline:focus,
+.open-menu #menuline:hover{
+  background-image: none;
+  background-color: var(--gradient-hover-bg);
+}
+
+#menuline h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-family: var(--gothic);
+  color: var(--text-white);
+  text-transform: uppercase;
+  flex: 1;
+  text-align: center;
+  padding: 10px 0 10px 30px;
+}
+
+#hamburger-menu {
+  flex: 0 0 50px;
+  margin-right: 10px;
+  padding: 1rem;
+}
+
+nav ul {
+  display: none;
+}
+
+.open-menu ul {
+  display: block;    
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--gradient-bg);
+  background-image: var(--gradient);
+  border-radius: 0 0 20px 20px;
+}
+
+nav li{
+  border-bottom: 1px solid var(--text-white);
+  width: 100%;
+}
+
+nav li a {
+  display: block;
+  text-transform: uppercase;
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+nav li:last-child a{
+  border-radius: 0 0 20px 20px;
+}
+
+nav li a:focus,
+nav li a:hover{
+  background-image: none;
+  background-color: var(--gradient-hover-bg);
+}
+
+@media screen and (min-width: 768px) { 
+  .banner {
+    display: flex;
+  }
+  
+  .banner > div:first-child {
+    flex-grow: 1;
+    padding: 40px;
+  }
+  
+  .blog-name {
+    font-family: var(--header-font);
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 4rem;
+    max-width: 100%;
+  }
+  
+  .slogan {
+    color: var(--primary);
+    font-family: var(--secondary-font);
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+  
+  .header-image {
+    height: 200px;
+    background-position: bottom;
+  }
+  
+  nav {
+    background-color: var(--text-white);
+    width: 100vw;
+  }
+
+  .active {
+    font-weight: bold;
+    color: var(--primary);
+  }
+
+  nav > div {
+    display: inline-block;
+  }
+
+  nav ul {
+    background-image: none;
+    background-color: inherit;
+    border-radius: 0;
+    margin: 0;
+    max-width: 100%;
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-bottom: 1px solid var(--text);
+    padding: 0 50px 10px;
+  }
+
+  nav li {
+    display: inline-flex;
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li a {
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  nav li a::after {
+    content: attr(data-text);
+    font-weight: bold;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  nav li a:focus,
+  nav li a:hover {
+    background-image: none;
+    background-color: inherit;
+    font-weight: bold;
+    outline: none;
+  }
+
+  nav li .circle {
+    background-color: var(--gradient-bg);
+    background-image: var(--gradient);
+    border-radius: 50%;
+    height: 0.8rem;
+    width: 0.8rem;
+    display: none; 
+    margin-top: -10px;
+  }
+
+  nav li .active + .circle,
+  nav li a:hover + .circle,
+  nav li a:focus + .circle {
+    display: block; 
+  }
+
+  #menu {
+    display: flex;
+    justify-content: center;
+  }
 }

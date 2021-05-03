@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.screen-reader-only {
+  position: fixed !important;
+  left: 0 !important;
+  top: 50% !important;
+  clip: rect(0, 0, 1px, 1px) !important;
+}
+
+
+@media screen and (max-width: 768px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 768px) { 
+  .tablet-hidden {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .desktop-hidden {
+    display: none !important;
+  }
+}

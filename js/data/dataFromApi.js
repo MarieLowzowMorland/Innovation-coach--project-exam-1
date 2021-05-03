@@ -10,10 +10,21 @@ export const findPostById = async (id) => {
   }
 };
 
-export const findPosts = async (pageNumber) => {
+export const findPosts = async (pageNumber, topic, search) => {
   const page = pageNumber || 1;
+  
+  let categoryQuery = "";
+  if (topic) {
+    categoryQuery= `&categories=${topic}`
+  };
+  
+  let searchQuery = "";
+  if (search) {
+    searchQuery= `&search=${search}`
+  };
+
   try {
-    const response = await fetch(`${apiPostsBaseUrl}?_embed&page=${page}`);
+    const response = await fetch(`${apiPostsBaseUrl}?_embed&page=${page}${categoryQuery}${searchQuery}`);
     if(response.status < 200 || response.status > 300){
       throw new Error("Error, maybe no more results");
     }
