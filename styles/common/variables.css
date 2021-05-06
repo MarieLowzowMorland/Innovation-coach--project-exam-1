@@ -5,10 +5,11 @@
   --primary-hover:#707070;
   --primary-bg:#127cbe;
   --primary-hover-bg:#07314B;
-  --text: #717171;
+  --text: #6e6e6e;
   --text-white: #ffffff;
   --secondary-bg: #ffffff;
   --third-bg: #F3F2EF;
+  --error: #BF0C11;
 
   --header-font: century-gothic, sans-serif;
   --secondary-font: freight-macro-pro, serif;

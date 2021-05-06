@@ -8,11 +8,96 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="./styles/pages/contact.css" rel="stylesheet" type="text/CSS" />
-    <link rel="stylesheet" href="https://use.typekit.net/qcp8twi.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qcp8twi.css" />
   </head>
   <body>
     <main>
-      Index/Home
+      <div class="main-content">
+        <section>
+          <h1>Feedback or coffee?</h1>
+          <p>
+            Please take your time to give me your feedback on this site. This blog
+            is constantly improving and it would be great if you could help me
+            with pointers on what could be better!
+          </p>
+          <p>
+            You can also contact me if you want me to take a look on your project,
+            organise a workshop for you and your team or if you just want to
+            discuss some of the topics I cover. Fill in this form to contact me,
+            and we can have a cup of coffee.
+          </p>
+        </section>
+
+        <div>
+          <form id="contact-form">
+            <div>
+              <div class="topline">
+              <label for="name">Name</label>
+              <div class="form-error">
+                <p>More than 5 characters required</p>
+              </div>
+              </div>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                data-minlength="6"
+              />
+            </div>
+
+            <div>
+              <div class="topline">
+              <label for="e-mail">E-mail</label>
+              <div class="form-error">
+                <p>Valid e-mail required</p>
+              </div>
+              </div>
+              <input 
+                type="email" 
+                name="e-mail" 
+                id="e-mail" 
+                required />
+            </div>
+
+            <div>
+              <div class="topline">
+                <label for="subject">Subject</label>
+                <div class="form-error">
+                  <p>More than 15 characters required</p>
+                </div>
+              </div>
+              <input
+                type="text"
+                name="subject"
+                id="subject"
+                required
+                data-minlength="16"
+              />
+            </div>
+
+            <div>
+              <div class="topline">
+              <label for="message">Message</label>
+              <div class="form-error">
+                <p>More than 25 characters required</p>
+              </div>
+              </div>
+              <textarea
+                name="message"
+                id="message"
+                required
+                data-minlength="26"
+              ></textarea>
+            </div>
+
+            <button type="submit" formnovalidate>
+              <span>Send</span>
+            </button>
+          </form>
+        </div>
+          
+      </div>
     </main>
     <script src="./js/pages/contact.js" type="module"></script>
   </body>

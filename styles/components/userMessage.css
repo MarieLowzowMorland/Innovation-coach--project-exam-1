@@ -1,0 +1,17 @@
+#user-messages{
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  z-index: 999999;
+  transform: translateX(-50%);
+}
+
+#user-messages p{
+  background-color: var(--text-white);
+  color: var(--text);
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 100px 50px;
+  border-radius: 50px;
+  box-shadow: 3px 3px 6px #0000004d;
+}

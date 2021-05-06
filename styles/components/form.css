@@ -1,0 +1,58 @@
+form > div {
+  margin: 1rem 0;
+}
+
+.topline {
+  display: flex;
+  align-items: flex-end;
+}
+
+label {
+  color: var(--primary);
+  font-size: 1rem;
+  min-width: 6rem;
+  padding: 0.9rem;
+  margin: 0;
+  display: inline-block;
+}
+
+textarea,
+input {
+  height: 2rem;
+  width: 100%;
+  margin: 0;
+  vertical-align: top;
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0px 3px 6px #00000029;
+}
+
+textarea{
+  height: 10rem;
+}
+
+.invalid input,
+.invalid textarea {
+  border: 1px solid var(--error);
+}
+
+.form-error {
+  max-width: calc(100% - 6rem);
+  vertical-align: bottom;
+}
+
+.form-error p {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  margin: 0.9rem 0;
+}
+
+.invalid .form-error p {
+  color: var(--error);
+}
+
+form button {
+  display: block;
+  margin-left: auto;
+}

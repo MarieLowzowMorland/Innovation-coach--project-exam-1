@@ -1,5 +1,23 @@
 @import '../common/variables.css';
 @import '../common/text.css';
 @import '../common/layouts.css';
+@import '../components/buttons.css';
+@import '../components/form.css';
+@import '../components/userMessage.css';
 @import '../templates/header.css';
 @import '../templates/footer.css';
+
+main {
+  background-color: var(--third-bg);
+  padding: 40px 0;
+}
+
+.main-content{
+  width: calc(100% - 40px);
+  max-width: 35rem;
+  margin: 0 auto;
+}
+
+footer {
+  margin: 0;
+}
