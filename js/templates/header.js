@@ -1,4 +1,4 @@
-import { hamburgerMenu } from '../templates/svgIcons.js';
+import { HamburgerMenu } from '../templates/svgIcons.js';
 
 export const pageNames = {
   HOME: {
@@ -72,7 +72,7 @@ const headerTemplate = ( selectedPage ) => /*template*/ `
       <div id="menu">
         <button id="menuline" class="tablet-hidden">
           <span class="pagename">${selectedPage.name}</span>
-          <span id="hamburger-menu">${hamburgerMenu()}</span>
+          <span id="hamburger-menu">${HamburgerMenu()}</span>
         </button>
         <ul>
           ${link(selectedPage, pageNames.HOME)}

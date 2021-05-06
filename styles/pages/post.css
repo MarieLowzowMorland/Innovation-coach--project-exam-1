@@ -1,6 +1,7 @@
 @import '../common/variables.css';
 @import '../common/text.css';
 @import '../common/layouts.css';
+@import '../components/modal.css';
 @import '../templates/header.css';
 @import '../templates/footer.css';
 
@@ -14,6 +15,7 @@ img {
   width: 100%;
   object-fit: contain;
   height: auto;
+  max-height: 80vh;
   margin: 0 auto;
   display: block;
 }
@@ -41,8 +43,16 @@ ol {
   border-left: solid;
 }
 
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+
 figure {
   margin: 0;
+}
+
+.wp-block-media-text__content figure {
   margin-right: 20px;
 }
 
