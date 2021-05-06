@@ -71,7 +71,7 @@ const headerTemplate = ( selectedPage ) => /*template*/ `
     <nav>
       <div id="menu">
         <button id="menuline" class="tablet-hidden">
-          <h1>${selectedPage.name}</h1>
+          <span class="pagename">${selectedPage.name}</span>
           <span id="hamburger-menu">${hamburgerMenu()}</span>
         </button>
         <ul>

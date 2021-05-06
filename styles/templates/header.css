@@ -32,15 +32,15 @@ nav.stick-to-top {
   box-shadow: none;
 }
 
-.homepage h1 {
+.homepage .pagename {
   position: fixed;
   left: 0;
   top: 50%;
   clip: rect(0, 0, 1px, 1px);
 }
 
-.homepage nav.stick-to-top h1,
-.homepage .open-menu h1 {
+.homepage nav.stick-to-top .pagename,
+.homepage .open-menu .pagename {
   position: static;
   clip: none;
 }
@@ -54,7 +54,7 @@ nav.stick-to-top {
   background-color: var(--secondary-bg);
 }
 
-#menuline h1 {
+#menuline .pagename {
   margin: 0;
   font-size: 1rem;
   font-family: var(--gothic);
