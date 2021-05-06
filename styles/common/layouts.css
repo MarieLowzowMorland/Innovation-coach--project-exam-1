@@ -27,6 +27,10 @@ main {
   clip: rect(0, 0, 1px, 1px) !important;
 }
 
+.reverse-column-order{
+  display: flex;
+  flex-direction: column-reverse;
+}
 
 @media screen and (max-width: 768px) {
   .mobile-hidden {

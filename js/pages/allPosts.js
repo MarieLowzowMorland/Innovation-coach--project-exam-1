@@ -23,8 +23,10 @@ const postToHtml = (post) => {
   return /*template*/`
     <a href="post.html?id=${id}" class="post">
       <div>
-        <p class="date">${dateString}</p>
-        <h2>${title}</h2>
+        <div class="reverse-column-order">
+          <h2>${title}</h2>
+          <p class="date">${dateString}</p>
+        </div>
         <div class="article-introduction">${summary}</div>
         <p class="link">Read more </p>
       </div>
