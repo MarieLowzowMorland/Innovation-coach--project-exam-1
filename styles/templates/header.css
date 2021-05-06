@@ -12,6 +12,7 @@ nav.stick-to-top {
 #menuline {
   background-color: var(--secondary-bg);
   border: none;
+  border-radius: 0;
   width: 100vw;
   display: flex;
   height: 4rem;
@@ -49,7 +50,6 @@ nav.stick-to-top {
 }
 
 .open-menu #menuline {
-  border-radius: 0;
   background-image: none;
   background-color: var(--secondary-bg);
 }
@@ -122,6 +122,12 @@ nav li a:hover{
   box-shadow: 3px 3px 6px #00000029;
 }
 
+.banner {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .homepage .banner{
   display: flex !important;
   flex-direction: column-reverse;
@@ -146,7 +152,7 @@ nav li a:hover{
   font-family: var(--header-font);
   font-weight: 400;
   font-size: 2rem;
-  line-height: 1rem;
+  line-height: 2rem;
   max-width: 100%;
 }
 
@@ -223,7 +229,6 @@ nav li a:hover{
   nav ul {
     background-image: none;
     background-color: inherit;
-    border-radius: 0;
     margin: 0;
     max-width: 100%;
     display: flex;

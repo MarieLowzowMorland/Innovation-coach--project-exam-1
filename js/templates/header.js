@@ -88,7 +88,7 @@ const headerTemplate = ( selectedPage ) => /*template*/ `
         <p class="slogan">Help your ideas come alive</p>
         <a class="cta" href="allPosts.html"> See newest articles </a>
       </div>
-      <img src="images/Hovedbilde.jpg" height="200" class="header-image"></div>
+      <img src="images/Hovedbilde.jpg" height="200" class="header-image" alt=""></div>
     </div>
   </header>`;
       

@@ -1,0 +1,12 @@
+button {
+  display: inline-block;
+  background-color: var(--primary-bg);
+  color: var(--text-white);
+  border-radius:20px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: lighter;
+  box-shadow: 3px 3px 6px #00000029;
+  border-style: none;
+  font-size: 1rem;
+}

@@ -8,7 +8,7 @@ addFooterForPage();
 const postId = new URLSearchParams(location.search).get("id");
 
 const postToHtml = (post) => {
-  const { id, dateString, title, content} = post;
+  const { dateString, title, content} = post;
 
   return /*template*/`
     <div>
@@ -19,8 +19,20 @@ const postToHtml = (post) => {
   `;
 };
 
+const resizeIframes = () => {
+  document.querySelectorAll("main iframe").forEach(iframe => {
+    const figureWidth = iframe.closest("figure").offsetWidth;
+    const { width, height } = iframe;
+
+    const newHeight = height / width * figureWidth;
+    iframe.width = figureWidth;
+    iframe.height = newHeight;
+  });
+}
+
 const addPostToHtml = (post) => {
   document.querySelector("main").insertAdjacentHTML("afterBegin", postToHtml(post));
+  resizeIframes();
 };
 
 findPostById(postId).then(addPostToHtml);

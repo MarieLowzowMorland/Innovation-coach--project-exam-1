@@ -1,5 +1,6 @@
 @import '../common/variables.css';
 @import '../common/text.css';
 @import '../common/layouts.css';
+@import '../components/search.css';
 @import '../templates/header.css';
 @import '../templates/footer.css';

@@ -15,16 +15,24 @@ let pageNumber = 1;
 
 const postToHtml = (post) => {
   const { id, dateString, title, summary, featuredImage} = post;
+  let altTextAttribute = "";
+  if(featuredImage.alt_text){
+    altTextAttribute = `aria-label="${featuredImage.alt_text}"`
+  }
 
   return /*template*/`
-    <div>
-      <p>${dateString}</p>
-      <h2>${title}</h2>
-      <img height="200" src="${featuredImage.src}">
-      <div class="article-introduction">${summary}</div>
-      <a href="post.html?id=${id}">Read more </a>
-    </div>   
-  `;
+    <a href="post.html?id=${id}" class="post">
+      <div>
+        <p class="date">${dateString}</p>
+        <h2>${title}</h2>
+        <div class="article-introduction">${summary}</div>
+        <p class="link">Read more </p>
+      </div>
+      <div role="img" ${altTextAttribute}
+        class="post-image-wrapper" 
+        style='background-image: url("${featuredImage.src}")'>
+      </div>
+    </a>`;
 };
 
 const fetchMorePosts = async (event) => {

@@ -50,7 +50,10 @@ const postInfo = (postFromWP) => {
   } = postFromWP;
 
   const featuredImage = _embedded["wp:featuredmedia"]
-    .map(media => {return {id: media.id, src: media.source_url }})[0];
+    .map(media => {
+      const { id, alt_text, source_url } = media;
+      return {id, alt_text, src: source_url }
+    })[0];
 
   const categories = _embedded["wp:term"][0]
     .filter(term => term.taxonomy === "category")

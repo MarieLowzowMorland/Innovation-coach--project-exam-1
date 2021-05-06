@@ -5,12 +5,56 @@
 @import '../templates/footer.css';
 
 main {
+  width: calc(100vw - 40px);
   max-width: 35rem;
-  margin: 0 auto;
+  margin: 0 20px;
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   object-fit: contain;
   height: auto;
+  margin: 0 auto;
+  display: block;
 }
+
+.wp-block-media-text {
+  display: flex;
+  align-items: center;
+}
+
+.wp-block-quote {
+  color: var(--primary);
+  font-style: italic;
+  border-left: solid;
+  padding: 0 10px;
+}
+
+cite {
+  font-weight: bold;
+  display: block;
+  text-align: right;
+}
+
+ol {
+  color: var(--primary);
+  border-left: solid;
+}
+
+figure {
+  margin: 0;
+  margin-right: 20px;
+}
+
+figcaption {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+
+@media screen and (min-width: 35rem) { 
+  main {
+    margin: 0 auto;
+  }
+} 
