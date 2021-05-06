@@ -230,6 +230,7 @@ nav li a:hover{
     background-image: none;
     background-color: inherit;
     margin: 0;
+    height: 4rem;
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
