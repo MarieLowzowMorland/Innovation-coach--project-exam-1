@@ -66,12 +66,16 @@ const link = ( selectedPage, linkToPage ) =>  /*template*/ `
   </li>`;
   
 
-const headerTemplate = ( selectedPage ) => /*template*/ `
-  <header class="${selectedPage === pageNames.HOME ? "homepage" : ""}">
+const headerTemplate = ( selectedPage ) => {
+  const isHomePage = selectedPage === pageNames.HOME;
+  const nameTagMobile = isHomePage ? "h1" : "span";
+  const nameTagTablet = isHomePage ? "h1" : "p";
+  return /*template*/ `
+  <header class="${isHomePage ? "homepage" : ""}">
     <nav>
       <div id="menu">
         <button id="menuline" class="tablet-hidden">
-          <span class="pagename">${selectedPage.name}</span>
+          <${nameTagMobile} class="pagename">${selectedPage.name}</${nameTagMobile}>
           <span id="hamburger-menu">${HamburgerMenu()}</span>
         </button>
         <ul>
@@ -84,13 +88,14 @@ const headerTemplate = ( selectedPage ) => /*template*/ `
     </nav>
     <div class="banner mobile-hidden">
       <div>
-        <p class="blog-name">Innovation Coach</p>
+        <${nameTagTablet} class="blog-name">Innovation Coach</${nameTagTablet}>
         <p class="slogan">Help your ideas come alive</p>
         <a class="cta" href="allPosts.html"> See newest articles </a>
       </div>
       <img src="images/Hovedbilde.jpg" height="200" class="header-image" alt=""></div>
     </div>
   </header>`;
+}
       
 
 export default addHeaderForPage;

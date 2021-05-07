@@ -1,5 +1,7 @@
 import addHeaderForPage, { pageNames } from "../templates/header.js";
 import addFooterForPage from "../templates/footer.js";
+import postToHtml from "../components/post.js";
+import addSearchbarTo from "../components/searchbar.js";
 import { findPosts } from "../data/dataFromApi.js";
 
 addHeaderForPage(pageNames.ALL_POSTS);
@@ -12,30 +14,6 @@ const search = searchParameters.get("text");
 
 let fetchingPosts = true;
 let pageNumber = 1;
-
-const postToHtml = (post) => {
-  const { id, dateString, title, summary, featuredImage} = post;
-  let altTextAttribute = "";
-  if(featuredImage.alt_text){
-    altTextAttribute = `aria-label="${featuredImage.alt_text}"`
-  }
-
-  return /*template*/`
-    <a href="post.html?id=${id}" class="post">
-      <div>
-        <div class="reverse-column-order">
-          <h2>${title}</h2>
-          <p class="date">${dateString}</p>
-        </div>
-        <div class="article-introduction">${summary}</div>
-        <p class="link">Read more </p>
-      </div>
-      <div role="img" ${altTextAttribute}
-        class="post-image-wrapper" 
-        style='background-image: url("${featuredImage.src}")'>
-      </div>
-    </a>`;
-};
 
 const fetchMorePosts = async (event) => {
   event.stopPropagation();
@@ -69,5 +47,5 @@ const addPostsToHtml = (posts) => {
   document.getElementById("more-posts").addEventListener("click", fetchMorePosts);
 };
 
-
+addSearchbarTo(document.getElementById("posts-container"));
 findPosts(pageNumber, topic, search).then(addPostsToHtml);

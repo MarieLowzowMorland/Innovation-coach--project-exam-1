@@ -132,6 +132,9 @@ nav li a:hover{
   display: flex !important;
   flex-direction: column-reverse;
   margin-top: -4rem;
+  width: 100%;
+  padding-bottom: 10px;
+  box-shadow: 3px 3px 6px #0000004d;
 }
   
 .header-image {
@@ -177,6 +180,7 @@ nav li a:hover{
 
   .homepage .banner {
     flex-direction: row;
+    box-shadow: none;
   }
   
   .banner > div:first-child {
@@ -201,6 +205,7 @@ nav li a:hover{
   .blog-name {
     font-size: 4rem;
     line-height: 4rem;
+    text-align: left;
   }
   
   .slogan {

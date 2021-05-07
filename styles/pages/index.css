@@ -1,6 +1,22 @@
 @import '../common/variables.css';
 @import '../common/text.css';
 @import '../common/layouts.css';
-@import '../components/search.css';
+@import '../components/searchbar.css';
+@import "../components/post.css";
+@import "../components/postCarousel.css";
 @import '../templates/header.css';
 @import '../templates/footer.css';
+
+main {
+  width: 100%;
+}
+
+main section {
+  max-width: 930px;
+  margin: 0 auto;
+}
+
+.post {
+  max-width: 1300px;
+  margin: 0 auto;
+}

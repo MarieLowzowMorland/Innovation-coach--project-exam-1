@@ -1,4 +1,20 @@
 const apiPostsBaseUrl = "https://morlanddesign.one/innovation-coach-admin/wp-json/wp/v2/posts";
+const apiCategoriesUrl = "https://morlanddesign.one/innovation-coach-admin/wp-json/wp/v2/categories";
+
+export const findCategoriesWithPosts = async () => {
+  try {
+    const response = await fetch(apiCategoriesUrl);
+    const categories = await response.json();
+    return categories
+      .filter(category => category.count > 0)
+      .map(category => {
+        const { id, name } = category;
+        return { id, name } 
+      });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export const findPostById = async (id) => {
   try {
