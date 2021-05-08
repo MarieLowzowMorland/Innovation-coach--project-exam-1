@@ -39,12 +39,16 @@ footer {
     margin-top: 40px;
   }
 
+  .section-wrapper:nth-child(odd) {
+    background-color: var(--third-bg);
+  }
+
   section {
     display: flex;
     align-items: center;
   }
 
-  section:nth-child(odd) {
+  .section-wrapper:nth-child(odd) section {
     flex-direction: row-reverse;
   }
 
@@ -56,29 +60,25 @@ footer {
   #entrepreneurial-team {
     width: 400px;
     height: 600px;
-    border-radius: 200px;
     max-width: calc(50% - 40px);
     margin: 0 auto;
+    box-shadow: 0px 3px 6px #00000029;
   }
 
   #author {
     width: 50vw;
-    height: calc(50vw / 3 * 2);
-    max-width: 35rem;
+    height: 50vw;
+    max-width: 21rem;
     max-height: 21rem;
-    border-radius: 0 200px 200px 0;
-    margin-right: auto;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 0px 3px 6px #00000029;
   }
 }
 
 @media screen and (min-width: 1300px) { 
-  main {
+  section {
     width: 1300px;
-    margin: 40px auto 0;
-  }
-
-  #author {
     margin: 0 auto;
-    border-radius: 200px;
   }
 }

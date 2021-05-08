@@ -23,9 +23,9 @@
 
 .post > .post-image-wrapper {
   width: calc(100vw - 40px);
-  height: calc((100vw - 40px) / 3 * 2);
+  height: calc(100vw - 40px);
   max-width: 500px;
-  max-height: calc(500px / 3 * 2);
+  max-height: 500px;
   margin: 20px;
   background-repeat: no-repeat;
   background-position: center center;
@@ -39,20 +39,16 @@
     max-width: 35rem;
   }
 
-  .post:nth-child(odd) {
+  .post-wrapper:nth-child(odd) .post {
     flex-direction: row;
   }
 
-  .post:nth-child(even) {
+  .post-wrapper:nth-child(even) .post {
     flex-direction: row-reverse;
   }
   
-  .post:nth-child(even) .post-image-wrapper {
-    border-radius: 0 150px 150px 0;
-  }
-  
-  .post:nth-child(odd) .post-image-wrapper {
-    border-radius: 150px 0 0 150px;
+  .post .post-image-wrapper {
+    border-radius: 50%;
   }
 
   .article-introduction p {
@@ -77,7 +73,8 @@
 
   .post > .post-image-wrapper {
     margin: 0;
-    width: 320px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
+    box-shadow: 0px 3px 6px #00000029;
   }
 } 
