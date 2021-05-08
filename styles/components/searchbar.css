@@ -21,12 +21,13 @@
 
 .inputs {
   max-width: 100%;
+  width: 30rem;
   height: 3.5rem;
   display: grid;
   grid-template: 
               "input select button"
               "labelA labelB labelB"
-              / 1fr 1fr 3.5rem;
+              / 2fr 3fr 3.5rem;
 }
 
 #search-container label{
@@ -45,15 +46,13 @@
 }
 
 #search-container label[for="search-topic"]::before {
-  content: "|";
+  content: "";
   position: absolute;
   left: -0.125rem;
-  top: -2.2rem;
-  font-size: 1.5rem;
-  height: 2rem;
-  width: 0.13rem;
-  overflow: hidden;
-  color: var(--text);
+  top: -2rem;
+  height: 1.5rem;
+  width: 1px;
+  border-left: 1px solid var(--text);
 }
 
 #search-container input,
@@ -72,10 +71,6 @@
   border-radius: 1rem 0 0 1rem;
 }
 
-#search-container select {
-  grid-area: select;
-}
-
 #search-container button {
   grid-area: button;
   width: 3.5rem;
@@ -88,6 +83,51 @@
   stroke: var(--text-white);
   width: 1rem;
   height: auto;
+}
+
+.select-wrapper {
+  position: relative;
+  height: 2rem;
+  width: 100%;
+  cursor: pointer;
+  background-color: var(--text-white);
+  pointer-events: none;
+  grid-area: select;
+}
+
+.select-wrapper > select {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  margin: 0; 
+  line-height: 1rem;
+  padding: 7px; 
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.select-wrapper > .arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 1rem;
+  margin: 0.5rem 2px;
+  background-color: var(--text-white);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.select-wrapper > .arrow svg {
+  height: 1rem;
+  width: auto;
+}
+
+.select-wrapper > .arrow svg path{
+  stroke: var(--text);
 }
 
 @media screen and (min-width: 768px) { 
@@ -103,7 +143,7 @@
   .inputs {
     grid-template: "labelA labelB labelB"
                   "input select button"
-                  / 1fr 1fr 3.5rem;
+                  / 2fr 3fr 3.5rem;
   }
 
   #search-container label[for="search-topic"]::before {

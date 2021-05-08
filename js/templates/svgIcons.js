@@ -37,6 +37,11 @@ export const ArrowRight = () => /*template*/ `
     </g>
   </svg>`;
 
+export const ArrowDropdown = () => /*template*/ `
+  <svg xmlns="http://www.w3.org/2000/svg" width="51" height="32" viewBox="0 12 51 32">
+    <path data-name="Path 34" d="M4729.332-4216.432l14.233,16.452,14.241-16.452" transform="translate(-4718 4239.412)" fill="none" stroke="#fff" stroke-width="2"/>
+  </svg>`;
+
 export const Search = () => /*template*/ `
   <svg xmlns="http://www.w3.org/2000/svg" width="20.367" height="20.367" viewBox="0 0 20.367 20.367">
     <g data-name="Icon feather-search" transform="translate(1.5 1.5)">

@@ -1,5 +1,5 @@
 import { pageNames } from "../templates/header.js";
-import { Search } from "../templates/svgIcons.js";
+import { Search, ArrowDropdown } from "../templates/svgIcons.js";
 import { findCategoriesWithPosts } from "../data/dataFromApi.js";
 
 const searchbarTemplate = () => /*template*/`
@@ -15,9 +15,12 @@ const searchbarTemplate = () => /*template*/`
         Search by topic
       </label>
       <input id="search-text" name="text" />
-      <select id="search-topic" name="topic">
-        <option value="" selected>All topics</option>
-      </select>
+      <div class="select-wrapper">
+        <select id="search-topic" name="topic">
+          <option value="" selected>All topics</option>
+        </select>
+        <div class="arrow">${ArrowDropdown()}</div>
+      </div>
       <button type="submit" id="search-button">${Search()}</button>
     </div>
   </form>`;
