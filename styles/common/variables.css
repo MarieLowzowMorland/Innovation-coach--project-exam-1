@@ -1,11 +1,11 @@
 :root {
   --gradient: linear-gradient(to bottom, #54a4ea, #4392d4, #3181be, #1d70a8, #006093);
   --gradient-bg: #127cbe;
-  --primary:#127cbe;
+  --primary:#006da7;
   --primary-hover:#707070;
   --primary-bg:#127cbe;
   --primary-hover-bg:#07314B;
-  --text: #6e6e6e;
+  --text: #555555;
   --text-white: #ffffff;
   --secondary-bg: #ffffff;
   --third-bg: #F3F2EF;

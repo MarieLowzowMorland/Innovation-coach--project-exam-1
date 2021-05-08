@@ -46,7 +46,7 @@ nav.stick-to-top {
 }
 
 #menuline line{
-  stroke: var(--text);
+  stroke: var(--primary-hover-bg);
 }
 
 .open-menu #menuline {
@@ -135,8 +135,14 @@ nav li a:hover{
   width: 100%;
   padding-bottom: 10px;
   box-shadow: 3px 3px 6px #0000004d;
+  height: 100vh;
+  justify-content: flex-end;
 }
-  
+
+.homepage .banner > div:first-child {
+  margin-top: 50px;
+}
+
 .header-image {
   object-fit: contain;
   height: auto;
@@ -181,6 +187,7 @@ nav li a:hover{
   .homepage .banner {
     flex-direction: row;
     box-shadow: none;
+    height: inherit;
   }
   
   .banner > div:first-child {
