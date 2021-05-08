@@ -84,7 +84,6 @@ const headerTemplate = (selectedPage) => {
         <ul>
           ${link(selectedPage, pageNames.HOME)}
           ${link(selectedPage, pageNames.ALL_POSTS)}
-          ${link(selectedPage, pageNames.TOOLS_AND_LINKS)}
           ${link(selectedPage, pageNames.ABOUT)}
           ${link(selectedPage, pageNames.CONTACT)}
         </ul>
