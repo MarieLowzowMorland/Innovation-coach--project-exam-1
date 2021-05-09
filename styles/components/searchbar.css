@@ -75,8 +75,13 @@
   grid-area: button;
   width: 3.5rem;
   padding: inherit;
-  background-color: var(--primary-bg);
+  background-color: var(--fourth-bg);
   border-radius: 0 1rem 1rem 0;
+}
+
+#search-container button:focus,
+#search-container button:hover {
+  background-color: var(--primary-bg);
 }
 
 #search-container button path {

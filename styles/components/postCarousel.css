@@ -32,12 +32,12 @@
 }
 
 .controls svg ellipse{
-  fill: var(--primary);;
+  fill: var(--fourth-bg);;
 }
 
 .controls:hover svg ellipse,
 .controls:focus svg ellipse{
-  fill: var(--secondary);;
+  fill: var(--primary);;
 }
 
 .control-previous {
