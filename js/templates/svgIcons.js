@@ -2,7 +2,7 @@ export const Logo = () => /*template*/`
   <svg data-name="Component 14 – 1" xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
     <title>Home</title>
     <circle data-name="Ellipse 10" cx="31.5" cy="31.5" r="31.5"/>
-    <text transform="translate(5.597 43.2)" fill="#fff" font-size="31" font-family="CenturyGothic, Century Gothic"><tspan x="0" y="0">InC</tspan></text>
+    <text transform="translate(5.597 43.2)" fill="#fff" font-size="31"><tspan x="0" y="0">InC</tspan></text>
   </svg>`;
 
 export const HamburgerMenu = () => /*template*/`

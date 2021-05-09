@@ -23,6 +23,7 @@ nav.stick-to-top {
   height: 3rem;
   width: auto;
   margin: 5px;
+  font-family: var(--header-font);
 }
 
 .logo:focus svg circle,
@@ -93,11 +94,14 @@ nav li:last-child {
   border-bottom: none;
 }
 
+nav a {
+  text-decoration: none;
+}
+
 nav li a {
   display: block;
   font-size: 1rem;
   color: var(--text);
-  text-decoration: none;
   font-weight: lighter;
 }
 
