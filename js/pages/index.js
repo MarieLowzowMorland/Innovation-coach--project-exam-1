@@ -8,18 +8,18 @@ import { findPosts } from "../data/dataFromApi.js";
 addHeaderForPage(pageNames.HOME);
 addFooterForPage();
 
-const addFirstPostToHtml = (posts) => {
-  if(!posts){
+const addFirstPostToHtml = (firstPost) => {
+  if(!firstPost){
     return;
   }
 
-  const firstPost = postToHtml(posts[0])
   const search = document.getElementById("search-container");
-  search.insertAdjacentHTML("beforebegin", firstPost);
+  search.insertAdjacentHTML("beforebegin", postToHtml(firstPost));
 };
 
 addSearchbarTo(document.getElementById("first-post-container"));
 findPosts().then((posts) => {
-  addFirstPostToHtml(posts);
+  const firstPost = posts.shift();
+  addFirstPostToHtml(firstPost);
   createCarousel(posts, ".post-slider-wrapper");
 });
