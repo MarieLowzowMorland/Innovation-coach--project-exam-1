@@ -111,7 +111,7 @@ header video {
     left: 0;
     top: 30vh;
     width: auto;
-    height: auto;
+    height: auto !important;
     min-width: 30rem;
     min-height: 30rem;
     box-shadow: var(--thin-shadow);

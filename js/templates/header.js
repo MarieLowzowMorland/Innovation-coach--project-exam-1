@@ -71,9 +71,18 @@ const addHeaderForPage = (selectedPage) => {
   document.querySelector("#menu button").addEventListener("click", toggleMenu);
   stickyNav();
   if(selectedPage === pageNames.HOME){
-    document.querySelector("header .banner-circle").addEventListener("click", toggleVideo)
-    document.getElementById("homepage-video").addEventListener("click", toggleVideo)
-    document.getElementById("video-control").addEventListener("click", toggleVideo)
+    const bannerCircle = document.querySelector("header .banner-circle");
+    const homepageVideo = document.getElementById("homepage-video");
+    const videoControl = document.getElementById("video-control");
+    const initialAvailableHeight = window.innerHeight;
+
+    bannerCircle.addEventListener("click", toggleVideo)
+    homepageVideo.addEventListener("click", toggleVideo)
+    videoControl.addEventListener("click", toggleVideo)
+
+    bannerCircle.style.height = `${initialAvailableHeight}px`;
+    homepageVideo.style.height = `${initialAvailableHeight}px`;
+    videoControl.style.top = `calc(${initialAvailableHeight}px - 5rem)`;
   }
 };
 
