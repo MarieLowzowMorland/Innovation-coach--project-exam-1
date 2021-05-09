@@ -8,7 +8,7 @@ form > div {
 }
 
 label {
-  color: var(--primary);
+  color: var(--tertiary);
   font-size: 1rem;
   min-width: 6rem;
   padding: 0.9rem;
@@ -26,6 +26,8 @@ input {
   border: none;
   border-radius: 1rem;
   box-shadow: var(--thin-shadow);
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 textarea{

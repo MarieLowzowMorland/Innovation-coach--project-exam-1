@@ -1,8 +1,9 @@
 :root {
-  --primary: #e2008b;
+  --primary-gradient: linear-gradient(to top, #FFF500, #FFF500aa, #FFF50077, #FFF50011);
+
+  --primary: #FFF500;
   --secondary: #000000;
-  --tertiary: #007B7B;
-  --quaternary: #006da7;
+  --tertiary: #006da7;
 
   --text-primary: #555555;
   --text-secondary: #ffffff;
@@ -11,6 +12,7 @@
   --bg-secondary: #f1f1f1;
 
   --error: #bf0c11;
+  --thick-shadow: 2px 2px 6px #00000046;
   --shadow: 3px 3px 6px #00000029;
   --thin-shadow: 0px 3px 6px #00000029;
 

@@ -1,7 +1,8 @@
 .post-slider-wrapper {
   position: relative;
-  width: 100%;
+  width: calc(100% - 40px);
   padding: 20px 0;
+  margin: 0 20px;
   min-height: 350px;
   overflow: hidden;
 }
@@ -32,12 +33,21 @@
 }
 
 .controls svg ellipse {
-  fill: var(--secondary);
+  fill: var(--primary);
+}
+
+.controls svg path {
+  stroke: var(--secondary);
 }
 
 .controls:hover svg ellipse,
 .controls:focus svg ellipse {
-  fill: var(--primary);
+  fill: var(--secondary);
+}
+
+.controls:hover svg path,
+.controls:focus svg path {
+  stroke: var(--text-secondary);
 }
 
 .control-previous {
@@ -63,7 +73,7 @@
 }
 
 .small-post h3 {
-  color: var(--quaternary);
+  color: var(--text-primary);
   padding: 5px;
 }
 
@@ -74,6 +84,6 @@
 }
 
 .small-post:hover h3 {
-  color: var(--primary);
+  color: var(--secondary);
   text-decoration: underline;
 }

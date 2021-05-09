@@ -8,6 +8,11 @@ section > div:first-child {
   padding: 0 20px;
 }
 
+section h2 {
+  margin: 0;
+  padding: 1.2rem 0;
+}
+
 section p {
   margin: 1.15rem auto;
 }
@@ -16,6 +21,11 @@ section > div[role="img"] {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+
+.section-wrapper:nth-child(even) {
+  background-color: var(--bg-secondary);
+  padding-bottom: 50px;
 }
 
 #entrepreneurial-team {
@@ -32,15 +42,12 @@ section > div[role="img"] {
 
 footer {
   margin: 0;
+  background-color: var(--bg-secondary);
 }
 
 @media screen and (min-width: 768px) {
   main {
     margin-top: 40px;
-  }
-
-  .section-wrapper:nth-child(even) {
-    background-color: var(--bg-secondary);
   }
 
   section {

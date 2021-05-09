@@ -31,6 +31,11 @@ nav.stick-to-top {
   fill: var(--primary);
 }
 
+.logo:focus svg text,
+.logo:hover svg text {
+  fill: var(--secondary);
+}
+
 #menu button {
   background-color: inherit;
   border: none;
@@ -43,14 +48,14 @@ nav.stick-to-top {
   align-items: center;
 }
 
+#menu button line {
+  stroke: var(--secondary);
+}
+
 #menu button:focus line,
 #menu button:hover line {
   stroke-width: 4;
-  stroke: var(--primary);
-}
-
-#menu button line {
-  stroke: var(--secondary);
+  stroke: var(--tertiary);
 }
 
 #hamburger-menu {
@@ -105,15 +110,11 @@ nav li a {
   font-weight: lighter;
 }
 
-nav li a.active {
-  font-weight: bold;
-  color: var(--secondary);
-}
-
+nav li a.active,
 nav li a:focus,
 nav li a:hover {
   font-weight: bold;
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 @media screen and (min-width: 768px) {
@@ -171,16 +172,11 @@ nav li a:hover {
     transition: width 0.2s ease-in, height 0.2s ease-in;
   }
 
-  nav li .active + .circle {
-    background-color: var(--secondary);
-    background-image: none;
-    height: 0.8rem;
-    width: 0.8rem;
-  }
-
+  nav li a.active + .circle,
   nav li a:hover + .circle,
   nav li a:focus + .circle {
     background-color: var(--primary);
+    box-shadow: var(--thick-shadow);
     height: 0.8rem;
     width: 0.8rem;
   }

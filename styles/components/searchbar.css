@@ -33,7 +33,7 @@
 }
 
 #search-container label {
-  color: var(--tertiary);
+  color: var(--text-primary);
   margin: 5px 0;
 }
 
@@ -82,19 +82,24 @@
   grid-area: button;
   width: 3.5rem;
   padding: inherit;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   border-radius: 0 1rem 1rem 0;
 }
 
 #search-container button:focus,
 #search-container button:hover {
-  background-color: var(--primary);
+  background-color: var(--secondary);
 }
 
 #search-container button path {
-  stroke: var(--text-secondary);
+  stroke: var(--secondary);
   width: 1rem;
   height: auto;
+}
+
+#search-container button:hover path,
+#search-container button:focus path {
+  stroke: var(--text-secondary);
 }
 
 .select-wrapper {

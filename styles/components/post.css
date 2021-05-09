@@ -14,7 +14,8 @@
 }
 
 .post:hover .link {
-  color: var(--primary);
+  font-weight: bold;
+  color: var(--secondary);
   text-decoration: underline;
 }
 
@@ -68,9 +69,8 @@
     margin: 15px auto 0;
     text-align: center;
     display: block;
-    font-weight: bold;
     text-decoration: underline;
-    color: var(--quaternary);
+    color: var(--text-primary);
   }
 
   .post > .post-image-wrapper {

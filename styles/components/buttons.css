@@ -1,7 +1,7 @@
 button {
   display: inline-block;
-  background-color: var(--secondary);
-  color: var(--text-secondary);
+  background-color: var(--primary);
+  color: var(--secondary);
   border-radius: 20px;
   padding: 10px 20px;
   text-decoration: none;
@@ -13,5 +13,6 @@ button {
 
 button:hover,
 button:focus {
-  background-color: var(--primary);
+  background-color: var(--secondary);
+  color: var(--text-secondary);
 }
