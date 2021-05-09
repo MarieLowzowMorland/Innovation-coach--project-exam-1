@@ -1,4 +1,4 @@
-import { HamburgerMenu } from "../templates/svgIcons.js";
+import { HamburgerMenu, Logo, Play, Pause } from "../templates/svgIcons.js";
 
 export const pageNames = {
   HOME: {
@@ -48,54 +48,91 @@ const toggleMenu = (event) => {
   document.getElementById("menu").classList.toggle("open-menu");
 };
 
+let playing = true;
+const toggleVideo = (event) => {
+  const videControl = document.getElementById("video-control");
+  const video = document.getElementById("homepage-video");
+
+  if(playing){
+    video.pause();
+    videControl.innerHTML = Play();
+  } else {
+    video.play();
+    videControl.innerHTML = Pause();
+  }
+  playing = !playing;
+}
+
 const addHeaderForPage = (selectedPage) => {
   document
     .querySelector("main")
     .insertAdjacentHTML("beforebegin", headerTemplate(selectedPage));
 
-  document.getElementById("menuline").addEventListener("click", toggleMenu);
+  document.querySelector("#menu button").addEventListener("click", toggleMenu);
   stickyNav();
+  if(selectedPage === pageNames.HOME){
+    document.getElementById("homepage-video").addEventListener("click", toggleVideo)
+    document.getElementById("video-control").addEventListener("click", toggleVideo)
+  }
 };
 
 const link = (selectedPage, linkToPage) => /*template*/ `
   <li>
     <a href="${linkToPage.url}" data-text="${linkToPage.name}" class="${
-  selectedPage === linkToPage ? "active" : ""
-} discrete-button">
+      selectedPage === linkToPage ? "active" : ""
+    } discrete-button">
       ${linkToPage.name}
     </a>
     <span class="circle"></span>
   </li>`;
 
-const headerTemplate = (selectedPage) => {
-  const isHomePage = selectedPage === pageNames.HOME;
-  const nameTagMobile = isHomePage ? "h1" : "span";
-  const nameTagTablet = isHomePage ? "h1" : "p";
-  return /*template*/ `
-  <header class="${isHomePage ? "homepage" : ""}">
-    <nav>
-      <div id="menu">
-        <button id="menuline" class="tablet-hidden">
-          <${nameTagMobile} class="pagename">${
-    selectedPage.name
-  }</${nameTagMobile}>
+const navTemplate = (selectedPage) => /*template*/ `
+  <nav>
+    <div id="menu">
+      <div>
+        <a href="${pageNames.HOME.url}"
+          class="logo ${selectedPage === pageNames.HOME ? "active" : ""}"
+        >
+          ${Logo()}
+        </a>
+        <button class="tablet-hidden">
           <span id="hamburger-menu">${HamburgerMenu()}</span>
         </button>
-        <ul>
-          ${link(selectedPage, pageNames.HOME)}
-          ${link(selectedPage, pageNames.ALL_POSTS)}
-          ${link(selectedPage, pageNames.ABOUT)}
-          ${link(selectedPage, pageNames.CONTACT)}
-        </ul>
-    </nav>
-    <div class="banner mobile-hidden">
-      <div>
-        <${nameTagTablet} class="blog-name">Innovation Coach</${nameTagTablet}>
-        <p class="slogan">Help your ideas come alive</p>
-        <a class="cta" href="allPosts.html"> See newest articles </a>
       </div>
-      <img src="images/Hovedbilde.jpg" height="200" class="header-image" alt=""></div>
-  </header>`;
-};
+      <ul>
+        ${link(selectedPage, pageNames.ALL_POSTS)}
+        ${link(selectedPage, pageNames.ABOUT)}
+        ${link(selectedPage, pageNames.CONTACT)}
+      </ul>
+    </div>
+  </nav>`;
+
+  const homePageTemplate = () => /*template*/ `
+    <header class="homepage">
+      ${navTemplate(pageNames.HOME)}
+      <div class="banner-content">
+        <div class="banner-circle">
+          <div>
+            <h1 class="blog-name">Innovation Coach</h1>
+            <p class="slogan">Helping you connect the dots</p>
+            <a class="cta" href="allPosts.html"> See newest articles </a>
+          </div>
+          </div>
+        <button id="video-control">${Pause()}</button>
+      </div>
+      <video id="homepage-video" width="320" height="240" autoplay muted loop src="videos/homepage-video.mp4" poster="images/banner.jpg">
+        Your browser does not support the video tag.
+      </video>
+    </header>`;
+
+  const headerTemplate = (selectedPage) => {
+    if(selectedPage === pageNames.HOME) {
+      return homePageTemplate();
+    } else {
+      return /*template*/ `
+        <header>${navTemplate(selectedPage)}</header>
+      `;
+    }
+  };
 
 export default addHeaderForPage;

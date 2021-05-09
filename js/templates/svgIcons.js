@@ -1,3 +1,10 @@
+export const Logo = () => /*template*/`
+  <svg data-name="Component 14 – 1" xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
+    <title>Home</title>
+    <circle data-name="Ellipse 10" cx="31.5" cy="31.5" r="31.5"/>
+    <text transform="translate(5.597 43.2)" fill="#fff" font-size="31" font-family="CenturyGothic, Century Gothic"><tspan x="0" y="0">InC</tspan></text>
+  </svg>`;
+
 export const HamburgerMenu = () => /*template*/`
   <svg xmlns="http://www.w3.org/2000/svg" width="34" height="18" viewBox="0 0 34 18">
     <title>Hamburger menu</title>
@@ -10,6 +17,24 @@ export const HamburgerMenu = () => /*template*/`
     </g>
   </svg>`;
 
+export const Play = () => /*template*/`
+  <svg xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
+    <title>Play</title>
+    <g data-name="Group 834" transform="translate(-1041 -275)">
+      <circle data-name="Ellipse 10" cx="31.5" cy="31.5" r="31.5" transform="translate(1041 275)"/>
+      <path  data-name="Polygon 2" d="M12.816,0,25.632,22.428H0Z" transform="translate(1089 293.684) rotate(90)" fill="#fff"/>
+    </g>
+  </svg>`;
+
+export const Pause = () => /*template*/`
+  <svg xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
+    <title>Pause</title>
+    <g data-name="Group 835" transform="translate(-1041 -354)">
+      <circle data-name="Ellipse 18" cx="31.5" cy="31.5" r="31.5" transform="translate(1041 354)"/>
+      <rect data-name="Rectangle 198" width="7" height="28" transform="translate(1062 372)" fill="#fff"/>
+      <rect data-name="Rectangle 199" width="7" height="28" transform="translate(1076 372)" fill="#fff"/>
+    </g>
+  </svg>`;
 
 export const Remove = () => /*template*/`
   <svg xmlns="http://www.w3.org/2000/svg" width="21.707" height="21.707" viewBox="0 0 21.707 21.707">

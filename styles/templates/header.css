@@ -1,67 +1,55 @@
 nav {
-  position: relative;
+  position: fixed;
   z-index: 1001;
+  top: 0;
+  width: 100vw;
+  background-color: white;
+  box-shadow: var(--thin-shadow);
+}
+
+.homepage nav {
+  background-color: transparent;
+  box-shadow: none;
+  transition: background-color 0.5s ease-in;
 }
 
 nav.stick-to-top {
-  position: fixed;
-  top: 0;
+  background-color: white;
+  background-image: none;
+  box-shadow: var(--thin-shadow);
 }
 
-.homepage nav.stick-to-top #menuline,
-#menuline {
-  background-color: var(--secondary-bg);
+.logo svg {
+  height: 3rem;
+  width: auto;
+  margin: 5px;
+}
+
+.logo:focus svg circle,
+.logo:hover svg circle {
+  fill: var(--primary);
+}
+
+#menu button {
+  background-color: inherit;
   border: none;
   border-radius: 0;
-  width: 100vw;
   display: flex;
   height: 4rem;
+  flex-grow: 1;
+  box-shadow: none;
   justify-content: flex-end;
   align-items: center;
-  box-shadow: 0px 3px 6px #00000029;
 }
 
-#menuline:focus line,
-#menuline:hover line{
+#menu button:focus line,
+#menu button:hover line {
   stroke-width: 4;
   stroke: var(--primary);
 }
 
-.homepage #menuline {
-  background-color: transparent;
-  box-shadow: none;
-}
-
-.homepage .pagename {
-  position: fixed;
-  left: 0;
-  top: 50%;
-  clip: rect(0, 0, 1px, 1px);
-}
-
-.homepage nav.stick-to-top .pagename,
-.homepage .open-menu .pagename {
-  position: static;
-  clip: none;
-}
-
-#menuline line{
+#menu button line {
   stroke: var(--primary-hover-bg);
-}
-
-.open-menu #menuline {
-  background-image: none;
-  background-color: var(--secondary-bg);
-}
-
-#menuline .pagename {
-  margin: 0;
-  font-size: 1rem;
-  font-family: var(--gothic);
-  color: var(--text);
-  flex: 1;
-  text-align: center;
-  padding: 10px 0 10px 30px;
 }
 
 #hamburger-menu {
@@ -69,23 +57,35 @@ nav.stick-to-top {
   padding: 1rem;
 }
 
+#menu > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu.open-menu > div {
+  background-color: var(--secondary-bg);
+}
+
 nav ul {
   display: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .open-menu ul {
-  display: block;    
+  display: block;
   position: fixed;
   list-style: none;
   width: 100%;
-  margin: 0;
-  padding: 0;
   background-color: var(--secondary-bg);
-  box-shadow: 0px 3px 6px #00000029;
+  box-shadow: var(--thin-shadow);
 }
 
-nav li{
+nav li {
   border-bottom: 1px solid var(--text);
+  margin-top: 0.4rem;
   width: 100%;
 }
 
@@ -101,159 +101,37 @@ nav li a {
   font-weight: lighter;
 }
 
+nav li a.active {
+  font-weight: bold;
+  color: black;
+}
+
 nav li a:focus,
-nav li a:hover{
+nav li a:hover {
   font-weight: bold;
   color: var(--primary);
 }
 
-.cta {
-  display: none;
-}
+@media screen and (min-width: 768px) {
+  .homepage nav {
+    background-image: linear-gradient(to bottom, #ffffff, #ffffffcc);
+    box-shadow: var(--thin-shadow);
+  }
 
-.homepage .cta {
-  display: inline-block;
-  background-color: var(--primary-bg);
-  color: var(--text-white);
-  border-radius:20px;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: lighter;
-  box-shadow: 3px 3px 6px #00000029;
-}
-
-.banner {
-  max-width: 1500px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.homepage .banner{
-  display: flex !important;
-  flex-direction: column-reverse;
-  margin-top: -4rem;
-  width: 100%;
-  padding-bottom: 10px;
-  box-shadow: 3px 3px 6px #0000004d;
-  height: 100vh;
-  justify-content: flex-end;
-}
-
-.homepage .banner > div:first-child {
-  margin-top: 50px;
-}
-
-.header-image {
-  object-fit: contain;
-  height: auto;
-  width: auto;
-  max-width: 100%;
-  max-height: 300px;
-}
-
-.banner > div:first-child{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-  
-.blog-name {
-  font-family: var(--header-font);
-  font-weight: 400;
-  font-size: 2rem;
-  line-height: 2rem;
-  max-width: 100%;
-}
-
-.slogan {
-  color: var(--primary);
-  font-family: var(--secondary-font);
-  font-weight: 300;
-  font-size: 1.2rem;
-  margin-top: 0;
-  margin-bottom: 2rem;
-}
-
-@media screen and (min-width: 768px) { 
-  header {
+  #menu {
     display: flex;
-    flex-direction: column-reverse;
-  }
-
-  .banner {
-    display: flex;
-  }
-
-  .homepage .banner {
-    flex-direction: row;
-    box-shadow: none;
-    height: inherit;
-  }
-  
-  .banner > div:first-child {
-    flex-grow: 1;
-    padding: 40px;
-    display: block;
-  }
-
-  .homepage .banner > div:first-child {
-    padding-top: 160px;
-  }
-
-  .header-image {
-    height: 200px;
-    max-height: inherit;
-  }
-
-  .homepage .header-image {
-    height: 500px;
-  }
-
-  .blog-name {
-    font-size: 4rem;
-    line-height: 4rem;
-    text-align: left;
-  }
-  
-  .slogan {
-    font-size: 1.5rem;
-    margin: 1.15rem 0;
-  }
-  
-  nav {
-    background-color: var(--text-white);
-    width: 100vw;
-  }
-
-  nav.stick-to-top {
-    box-shadow: 0px 3px 6px #00000029;
-  }
-
-  .active {
-    font-weight: bold;
-    color: var(--primary);
-  }
-
-  nav > div {
-    display: inline-block;
+    justify-content: center;
   }
 
   nav ul {
-    background-image: none;
     background-color: inherit;
-    margin: 0;
     height: 4rem;
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    border-bottom: 1px solid var(--text);
     width: 700px;
     padding: 0 30px 10px;
-  }
-
-  nav.stick-to-top ul{
-    border-bottom: none;
   }
 
   nav li {
@@ -262,11 +140,6 @@ nav li a:hover{
     flex-direction: column;
     align-items: center;
     border-bottom: none;
-  }
-
-  nav li a {
-    text-decoration: none;
-    color: var(--text);
   }
 
   nav li a::after {
@@ -283,49 +156,48 @@ nav li a:hover{
   nav li a:focus,
   nav li a:hover {
     background-image: none;
-    background-color: inherit;
     font-weight: bold;
-    outline: none;
   }
 
   nav li .circle {
-    background-color: var(--gradient-bg);
-    background-image: var(--gradient);
     border-radius: 50%;
+    height: 0px;
+    width: 0px;
+    margin-top: -10px;
+    transition: width 0.2s ease-in, height 0.2s ease-in;
+  }
+
+  nav li .active + .circle {
+    background-color: black;
+    background-image: none;
     height: 0.8rem;
     width: 0.8rem;
-    display: none; 
-    margin-top: -10px;
   }
 
-  nav li .active + .circle,
   nav li a:hover + .circle,
   nav li a:focus + .circle {
-    display: block; 
-  }
-
-  #menu {
-    display: flex;
-    justify-content: center;
+    background-color: var(--gradient-bg);
+    background-image: var(--gradient);
+    height: 0.8rem;
+    width: 0.8rem;
   }
 }
 
-
-@media screen and (min-width: 1025px) { 
+@media screen and (min-width: 1025px) {
   nav ul {
     width: 900px;
     padding: 0 50px 10px;
   }
 }
 
-@media screen and (min-width: 1300px) { 
+@media screen and (min-width: 1300px) {
   nav ul {
     width: 1000px;
     padding: 0 70px 10px;
   }
 }
 
-@media screen and (min-width: 1600px) { 
+@media screen and (min-width: 1600px) {
   nav ul {
     width: 1400px;
     padding: 0 100px 10px;

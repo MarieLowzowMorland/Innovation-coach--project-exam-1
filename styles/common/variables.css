@@ -8,8 +8,12 @@
   --text: #555555;
   --text-white: #ffffff;
   --secondary-bg: #ffffff;
-  --third-bg: #F3F2EF;
+  --third-bg: #f2f2f2;
+  --fourth-bg:black;
   --error: #BF0C11;
+
+  --shadow: 3px 3px 6px #00000029;
+  --thin-shadow: 0px 3px 6px #00000029;
 
   --header-font: century-gothic, sans-serif;
   --secondary-font: freight-macro-pro, serif;

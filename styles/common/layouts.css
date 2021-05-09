@@ -5,6 +5,10 @@ body {
   min-height: 100vh;
 }
 
+header {
+  min-height: 4rem;
+}
+
 header, 
 footer {
   flex: 0 0 auto;

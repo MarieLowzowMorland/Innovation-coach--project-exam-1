@@ -66,7 +66,7 @@ const resizeIframes = () => {
 
 const addPostToHtml = (post) => {
   document.querySelector("main").insertAdjacentHTML("afterBegin", postToHtml(post));
-  document.title = `Innovation Coach|${post.title}`
+  document.title = `${post.title} | Innovation Coach`
   resizeIframes();
   addImageEvents();
 };
