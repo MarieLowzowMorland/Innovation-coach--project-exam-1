@@ -1,6 +1,6 @@
-#search-container{
+#search-container {
   min-height: 8rem;
-  background-color: var(--third-bg);
+  background-color: var(--bg-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,14 +25,15 @@
   height: 3.5rem;
   margin: 20px 0;
   display: grid;
-  grid-template: "labelA labelB labelB"
-                "input select button"
-                ". line line"
-                / 2fr 3fr 3.5rem;
+  grid-template:
+    "labelA labelB labelB"
+    "input select button"
+    ". line line"
+    / 2fr 3fr 3.5rem;
 }
 
-#search-container label{
-  color: var(--primary);
+#search-container label {
+  color: var(--tertiary);
   margin: 5px 0;
 }
 
@@ -57,7 +58,7 @@
   top: -1.7rem;
   height: 1.5rem;
   width: 1px;
-  border-left: 1px solid var(--text);
+  border-left: 1px solid var(--text-primary);
 }
 
 #search-container input,
@@ -65,9 +66,10 @@
 #search-container button {
   border: none;
   border-radius: 0;
-  background-color: var(--text-white);
+  background-color: var(--text-secondary);
   height: 2rem;
   width: 100%;
+  box-shadow: var(--thin-shadow);
 }
 
 #search-container input {
@@ -80,17 +82,17 @@
   grid-area: button;
   width: 3.5rem;
   padding: inherit;
-  background-color: var(--fourth-bg);
+  background-color: var(--secondary);
   border-radius: 0 1rem 1rem 0;
 }
 
 #search-container button:focus,
 #search-container button:hover {
-  background-color: var(--primary-bg);
+  background-color: var(--primary);
 }
 
 #search-container button path {
-  stroke: var(--text-white);
+  stroke: var(--text-secondary);
   width: 1rem;
   height: auto;
 }
@@ -100,7 +102,7 @@
   height: 2rem;
   width: 100%;
   cursor: pointer;
-  background-color: var(--text-white);
+  background-color: var(--text-secondary);
   pointer-events: none;
   grid-area: select;
 }
@@ -111,9 +113,9 @@
   border: none;
   width: 100%;
   height: 100%;
-  margin: 0; 
+  margin: 0;
   line-height: 1rem;
-  padding: 7px; 
+  padding: 7px;
   cursor: pointer;
   pointer-events: auto;
 }
@@ -125,7 +127,7 @@
   width: 30px;
   height: 1rem;
   margin: 0.5rem 2px;
-  background-color: var(--text-white);
+  background-color: var(--text-secondary);
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -136,17 +138,21 @@
   width: auto;
 }
 
-.select-wrapper > .arrow svg path{
-  stroke: var(--text);
+.select-wrapper > .arrow svg path {
+  stroke: var(--text-primary);
 }
 
-@media screen and (min-width: 768px) { 
-  #search-container{
+@media screen and (min-width: 768px) {
+  #search-container {
     flex-direction: row;
   }
 
   #search-container .description {
     text-align: center;
-    margin: 2rem 50px 0 0;
+    margin: 1rem 50px 0 0;
+  }
+
+  .inputs {
+    margin-top: 0;
   }
 }

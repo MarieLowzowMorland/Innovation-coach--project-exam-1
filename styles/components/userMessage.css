@@ -1,4 +1,4 @@
-#user-messages{
+#user-messages {
   position: fixed;
   top: 15%;
   left: 50%;
@@ -6,9 +6,9 @@
   transform: translateX(-50%);
 }
 
-#user-messages p{
-  background-color: var(--text-white);
-  color: var(--text);
+#user-messages p {
+  background-color: var(--text-secondary);
+  color: var(--text-primary);
   text-align: center;
   font-size: 1.5rem;
   padding: 100px 50px;

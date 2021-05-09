@@ -26,7 +26,7 @@ img {
 }
 
 .wp-block-quote {
-  color: var(--primary);
+  color: var(--quaternary);
   font-style: italic;
   border-left: solid;
   padding: 0 10px;
@@ -39,7 +39,7 @@ cite {
 }
 
 ol {
-  color: var(--primary);
+  color: var(--quaternary);
   border-left: solid;
 }
 

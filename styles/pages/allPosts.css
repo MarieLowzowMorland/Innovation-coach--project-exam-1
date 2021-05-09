@@ -11,9 +11,9 @@
   display: none;
 }
 
-#posts-container .post-wrapper:nth-child(even){
+#posts-container .post-wrapper:nth-child(even) {
   width: 100%;
-  background-color: var(--third-bg);
+  background-color: var(--bg-secondary);
 }
 
 #posts-container {

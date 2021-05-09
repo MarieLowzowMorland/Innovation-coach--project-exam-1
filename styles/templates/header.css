@@ -3,7 +3,7 @@ nav {
   z-index: 1001;
   top: 0;
   width: 100vw;
-  background-color: white;
+  background-color: var(--bg-primary);
   box-shadow: var(--thin-shadow);
 }
 
@@ -14,7 +14,7 @@ nav {
 }
 
 nav.stick-to-top {
-  background-color: white;
+  background-color: var(--bg-primary);
   background-image: none;
   box-shadow: var(--thin-shadow);
 }
@@ -23,7 +23,7 @@ nav.stick-to-top {
   height: 3rem;
   width: auto;
   margin: 5px;
-  font-family: var(--header-font);
+  font-family: var(--font-primary);
 }
 
 .logo:focus svg circle,
@@ -50,7 +50,7 @@ nav.stick-to-top {
 }
 
 #menu button line {
-  stroke: var(--primary-hover-bg);
+  stroke: var(--secondary);
 }
 
 #hamburger-menu {
@@ -65,7 +65,7 @@ nav.stick-to-top {
 }
 
 #menu.open-menu > div {
-  background-color: var(--secondary-bg);
+  background-color: var(--bg-primary);
 }
 
 nav ul {
@@ -80,12 +80,12 @@ nav ul {
   position: fixed;
   list-style: none;
   width: 100%;
-  background-color: var(--secondary-bg);
+  background-color: var(--bg-primary);
   box-shadow: var(--thin-shadow);
 }
 
 nav li {
-  border-bottom: 1px solid var(--text);
+  border-bottom: 1px solid var(--text-primary);
   margin-top: 0.4rem;
   width: 100%;
 }
@@ -101,13 +101,13 @@ nav a {
 nav li a {
   display: block;
   font-size: 1rem;
-  color: var(--text);
+  color: var(--text-primary);
   font-weight: lighter;
 }
 
 nav li a.active {
   font-weight: bold;
-  color: black;
+  color: var(--secondary);
 }
 
 nav li a:focus,
@@ -172,7 +172,7 @@ nav li a:hover {
   }
 
   nav li .active + .circle {
-    background-color: black;
+    background-color: var(--secondary);
     background-image: none;
     height: 0.8rem;
     width: 0.8rem;
@@ -180,8 +180,7 @@ nav li a:hover {
 
   nav li a:hover + .circle,
   nav li a:focus + .circle {
-    background-color: var(--gradient-bg);
-    background-image: var(--gradient);
+    background-color: var(--primary);
     height: 0.8rem;
     width: 0.8rem;
   }

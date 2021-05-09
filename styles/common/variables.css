@@ -1,21 +1,20 @@
 :root {
-  --gradient: linear-gradient(to bottom, #54a4ea, #4392d4, #3181be, #1d70a8, #006093);
-  --gradient-bg: #127cbe;
-  --primary:#006da7;
-  --primary-hover:#707070;
-  --primary-bg:#127cbe;
-  --primary-hover-bg:#07314B;
-  --text: #555555;
-  --text-white: #ffffff;
-  --secondary-bg: #ffffff;
-  --third-bg: #f2f2f2;
-  --fourth-bg:black;
-  --error: #BF0C11;
+  --primary: #e2008b;
+  --secondary: #000000;
+  --tertiary: #007B7B;
+  --quaternary: #006da7;
 
+  --text-primary: #555555;
+  --text-secondary: #ffffff;
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #f1f1f1;
+
+  --error: #bf0c11;
   --shadow: 3px 3px 6px #00000029;
   --thin-shadow: 0px 3px 6px #00000029;
 
-  --header-font: century-gothic, sans-serif;
-  --secondary-font: freight-macro-pro, serif;
+  --font-primary: century-gothic, sans-serif;
+  --font-secondary: freight-macro-pro, serif;
   --text-font: Helvetica, Arial, sans-serif;
-}   
+}

@@ -1,8 +1,8 @@
 button {
   display: inline-block;
-  background-color: var(--fourth-bg);
-  color: var(--text-white);
-  border-radius:20px;
+  background-color: var(--secondary);
+  color: var(--text-secondary);
+  border-radius: 20px;
   padding: 10px 20px;
   text-decoration: none;
   font-weight: lighter;
@@ -13,5 +13,5 @@ button {
 
 button:hover,
 button:focus {
-  background-color: var(--primary-bg);
+  background-color: var(--primary);
 }

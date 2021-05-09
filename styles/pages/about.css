@@ -1,8 +1,8 @@
-@import '../common/variables.css';
-@import '../common/text.css';
-@import '../common/layouts.css';
-@import '../templates/header.css';
-@import '../templates/footer.css';
+@import "../common/variables.css";
+@import "../common/text.css";
+@import "../common/layouts.css";
+@import "../templates/header.css";
+@import "../templates/footer.css";
 
 section > div:first-child {
   padding: 0 20px;
@@ -12,7 +12,7 @@ section p {
   margin: 1.15rem auto;
 }
 
-section > div[role=img] {
+section > div[role="img"] {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -34,13 +34,13 @@ footer {
   margin: 0;
 }
 
-@media screen and (min-width: 768px) { 
+@media screen and (min-width: 768px) {
   main {
     margin-top: 40px;
   }
 
-  .section-wrapper:nth-child(odd) {
-    background-color: var(--third-bg);
+  .section-wrapper:nth-child(even) {
+    background-color: var(--bg-secondary);
   }
 
   section {
@@ -48,7 +48,7 @@ footer {
     align-items: center;
   }
 
-  .section-wrapper:nth-child(odd) section {
+  .section-wrapper:nth-child(even) section {
     flex-direction: row-reverse;
   }
 
@@ -62,7 +62,7 @@ footer {
     height: 600px;
     max-width: calc(50% - 40px);
     margin: 0 auto;
-    box-shadow: 0px 3px 6px #00000029;
+    box-shadow: var(--thin-shadow);
   }
 
   #author {
@@ -72,11 +72,11 @@ footer {
     max-height: 21rem;
     border-radius: 50%;
     margin: 0 auto;
-    box-shadow: 0px 3px 6px #00000029;
+    box-shadow: var(--thin-shadow);
   }
 }
 
-@media screen and (min-width: 1300px) { 
+@media screen and (min-width: 1300px) {
   section {
     width: 1300px;
     margin: 0 auto;

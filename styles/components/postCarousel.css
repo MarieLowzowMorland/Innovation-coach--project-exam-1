@@ -31,30 +31,30 @@
   transform: translate(-14%, -5%);
 }
 
-.controls svg ellipse{
-  fill: var(--fourth-bg);;
+.controls svg ellipse {
+  fill: var(--secondary);
 }
 
 .controls:hover svg ellipse,
-.controls:focus svg ellipse{
-  fill: var(--primary);;
+.controls:focus svg ellipse {
+  fill: var(--primary);
 }
 
 .control-previous {
-  left:0;
+  left: 0;
 }
 
 .control-next {
-  right:0;
+  right: 0;
 }
 
 .small-post {
-  background-color: white;
+  background-color: var(--bg-secondary);
   font-weight: normal;
   font-style: normal;
   flex: 0 0 200px;
   margin: 0 10px;
-  box-shadow: 0px 3px 6px #00000029;
+  box-shadow: var(--thin-shadow);
   justify-content: flex-end;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .small-post h3 {
-  color: var(--text);
+  color: var(--quaternary);
   padding: 5px;
 }
 
@@ -73,7 +73,7 @@
   object-fit: cover;
 }
 
-.small-post:hover h3{
+.small-post:hover h3 {
   color: var(--primary);
   text-decoration: underline;
 }

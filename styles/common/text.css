@@ -1,6 +1,6 @@
 html {
   font-family: var(--text-font);
-  color: var(--text);
+  color: var(--text-primary);
 }
 
 p {
@@ -9,8 +9,13 @@ p {
   line-height: 1.5rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--header-font);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary);
   font-weight: 400;
   font-style: normal;
   text-align: center;
@@ -26,7 +31,7 @@ button {
 }
 
 .date {
-  color: var(--primary);
+  color: var(--tertiary);
   text-align: center;
   margin-bottom: 0;
 }
@@ -37,5 +42,5 @@ a {
 }
 
 label {
-  font-family: var(--secondary-font);
+  font-family: var(--font-secondary);
 }

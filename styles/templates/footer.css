@@ -1,6 +1,6 @@
 footer {
-  background-color: var(--fourth-bg);
-  color: var(--text-white);
+  background-color: var(--tertiary);
+  color: var(--text-secondary);
   margin-top: 50px;
 }
 
