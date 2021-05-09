@@ -71,6 +71,7 @@ const addHeaderForPage = (selectedPage) => {
   document.querySelector("#menu button").addEventListener("click", toggleMenu);
   stickyNav();
   if(selectedPage === pageNames.HOME){
+    document.querySelector("header .banner-circle").addEventListener("click", toggleVideo)
     document.getElementById("homepage-video").addEventListener("click", toggleVideo)
     document.getElementById("video-control").addEventListener("click", toggleVideo)
   }
@@ -120,7 +121,7 @@ const navTemplate = (selectedPage) => /*template*/ `
           </div>
         <button id="video-control">${Pause()}</button>
       </div>
-      <video id="homepage-video" width="320" height="240" autoplay muted loop src="videos/homepage-video.mp4" poster="images/banner.jpg">
+      <video id="homepage-video" width="320" height="240" autoplay muted loop playsinline src="videos/homepage-video.mp4" poster="images/banner.jpg">
         Your browser does not support the video tag.
       </video>
     </header>`;

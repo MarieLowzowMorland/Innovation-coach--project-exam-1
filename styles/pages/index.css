@@ -20,11 +20,10 @@ header video {
 
 #video-control {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: calc(100vh - 5rem);
-  width: 1px;
-  height: 1px;
   clip: rect(0, 0, 0, 0);
+  background-color: inherit;
   border: 0;
 }
 
