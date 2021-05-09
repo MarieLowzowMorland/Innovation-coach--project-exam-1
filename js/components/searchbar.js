@@ -21,6 +21,7 @@ const searchbarTemplate = () => /*template*/`
         </select>
         <div class="arrow">${ArrowDropdown()}</div>
       </div>
+      <div class="separator-line"><span></span></div>
       <button type="submit" id="search-button" aria-label="Search">${Search()}</button>
     </div>
   </form>`;
