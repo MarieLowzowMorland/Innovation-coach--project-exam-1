@@ -105,7 +105,8 @@ header video {
 
   .banner-circle {
     left: 0;
-    top: 50vh;
+    top: 0;
+    margin-top: 50%;
     transform: translateY(-50%);
     width: auto;
     height: auto !important;
