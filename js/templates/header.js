@@ -74,7 +74,10 @@ const addHeaderForPage = (selectedPage) => {
     const bannerCircle = document.querySelector("header .banner-circle");
     const homepageVideo = document.getElementById("homepage-video");
     const videoControl = document.getElementById("video-control");
-    const initialAvailableHeight = window.innerHeight;
+    let initialAvailableHeight = window.innerHeight;
+    if( initialAvailableHeight > 1500){
+      initialAvailableHeight = 1500;
+    }
 
     bannerCircle.addEventListener("click", toggleVideo)
     homepageVideo.addEventListener("click", toggleVideo)
