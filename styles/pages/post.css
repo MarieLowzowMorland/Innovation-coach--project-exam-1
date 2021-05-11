@@ -48,6 +48,11 @@ iframe {
   margin: 0 auto;
 }
 
+.wp-block-image img,
+.wp-block-media-text img {
+  cursor: zoom-in;
+}
+
 figure {
   margin: 0;
 }
@@ -60,6 +65,19 @@ figcaption {
   margin-top: 10px;
   font-size: 0.75rem;
   text-align: center;
+}
+
+.summary {
+  font-family: 'century-gothic';
+  font-size: large;
+  font-style: italic;
+}
+
+.summary p {
+  border: 1px solid var(--text-primary);
+  border-left: 0;
+  border-right: 0;
+  padding: 15px 0;
 }
 
 @media screen and (min-width: 35rem) {

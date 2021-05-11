@@ -242,14 +242,15 @@ const addValidationToForm = (formId, onSuccess) => {
   };
 
   const submitOnEnter = (event) => {
-    if (event.keyCode == 13) {
+    const enterPressed = event.key === "Enter" || event.keyCode === 13;
+    if ( enterPressed ) {
         event.stopPropagation();
         formSubmit.click();
     }
   }
 
   form.addEventListener("submit", validateForm(onSuccess));
-  pureInputs.forEach(input => input.addEventListener("keypress", submitOnEnter));
+  pureInputs.forEach(input => input.addEventListener("keydown", submitOnEnter));
   inputs.forEach((input) => {
     addErrorFields(input);
     input.addEventListener("blur", validateInputOnBlurHandler);
