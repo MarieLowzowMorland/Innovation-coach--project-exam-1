@@ -2,11 +2,6 @@ form > div {
   margin: 1rem 0;
 }
 
-.topline {
-  display: flex;
-  align-items: flex-end;
-}
-
 label {
   color: var(--tertiary);
   font-size: 1rem;
@@ -16,8 +11,19 @@ label {
   display: inline-block;
 }
 
+.input-wrapper{
+  display: grid;
+  position: relative;
+  grid-template: 
+    "input icon"
+    "error ."
+    / 1fr 3rem;
+}
+
 textarea,
 input {
+  grid-area: input;
+  place-self: center stretch;
   height: 2rem;
   width: 100%;
   margin: 0;
@@ -30,18 +36,71 @@ input {
   appearance: none;
 }
 
-textarea{
+button[type="submit"] {
+  margin-right: 3rem;
+}
+
+textarea {
   height: 10rem;
 }
 
 .invalid input,
 .invalid textarea {
+  position: relative;
+  z-index: 1;
   border: 1px solid var(--error);
 }
 
 .form-error {
-  max-width: calc(100% - 6rem);
+  grid-area: error;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
   vertical-align: bottom;
+}
+
+.form-error.visible {
+  width: 100%;
+  height: auto;
+  clip: auto;
+  border: solid 1px var(--error);
+  background-color: var(--error-bg);
+  border-radius: 0 0 20px 20px;
+  padding: 1rem 10px 0;
+  margin-top: -1rem;
+}
+
+.field-icon {
+  grid-area: icon;
+  justify-self: end;
+}
+
+.valid .field-valid-icon {
+  display: block;
+}
+
+.field-valid-icon,
+.error-info-toggle {
+  display: none;
+  height: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.error-info-toggle svg:hover circle {
+  fill: var(--error-hover);
+}
+
+.invalid .error-info-toggle {
+  display: block;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.invalid .error-info-toggle svg{
+  width: auto;
+  height: 100%;
 }
 
 .form-error p {
@@ -57,4 +116,25 @@ textarea{
 form button {
   display: block;
   margin-left: auto;
+}
+
+label .requirement {
+  margin-left: 1rem;
+  font-family: var(--font-tertiary);
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+.error-summary a {
+  font-weight: normal;
+  color: var(--error);
+  text-decoration: none;
+}
+
+.error-summary {
+  border: solid 1px var(--error);
+  border-radius: 20px;
+  padding: 10px;
+  color: var(--error);
+  background-color: var(--error-bg);
 }

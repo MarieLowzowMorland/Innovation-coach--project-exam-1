@@ -47,14 +47,12 @@
         </section>
 
         <div>
-          <form id="contact-form">
+          <p class="form-instructions">
+            All fields are mandatory in order for me to be able to answer your requests
+          </p>
+          <form id="contact-form" novalidate>
             <div>
-              <div class="topline">
-              <label for="name">Name</label>
-              <div class="form-error">
-                <p>More than 5 characters required</p>
-              </div>
-              </div>
+              <label for="name">Full name <span class="requirement">(More than 5 characters)</span></label>
               <input
                 type="text"
                 name="name"
@@ -65,12 +63,7 @@
             </div>
 
             <div>
-              <div class="topline">
               <label for="e-mail">E-mail</label>
-              <div class="form-error">
-                <p>Valid e-mail required</p>
-              </div>
-              </div>
               <input 
                 type="email" 
                 name="e-mail" 
@@ -79,12 +72,7 @@
             </div>
 
             <div>
-              <div class="topline">
-                <label for="subject">Subject</label>
-                <div class="form-error">
-                  <p>More than 15 characters required</p>
-                </div>
-              </div>
+              <label for="subject">Subject <span class="requirement">(More than 15 characters)</span></label>
               <input
                 type="text"
                 name="subject"
@@ -95,12 +83,7 @@
             </div>
 
             <div>
-              <div class="topline">
-              <label for="message">Message</label>
-              <div class="form-error">
-                <p>More than 25 characters required</p>
-              </div>
-              </div>
+              <label for="message">Message <span class="requirement">(More than 25 characters)</span></label>
               <textarea
                 name="message"
                 id="message"
@@ -109,7 +92,7 @@
               ></textarea>
             </div>
 
-            <button type="submit" formnovalidate>
+            <button type="submit">
               <span>Send</span>
             </button>
           </form>

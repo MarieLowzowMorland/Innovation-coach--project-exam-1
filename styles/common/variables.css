@@ -12,11 +12,13 @@
   --bg-secondary: #f1f1f1;
 
   --error: #bf0c11;
+  --error-bg: #f5e3e3;
+  --error-hover: #dc2c32;
   --thick-shadow: 2px 2px 6px #00000046;
   --shadow: 3px 3px 6px #00000029;
   --thin-shadow: 0px 3px 6px #00000029;
 
   --font-primary: century-gothic, sans-serif;
   --font-secondary: freight-macro-pro, serif;
-  --text-font: Helvetica, Arial, sans-serif;
+  --font-tertiary: Helvetica, Arial, sans-serif;
 }
