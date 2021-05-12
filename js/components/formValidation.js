@@ -190,7 +190,7 @@ const addValidationToForm = (formId, onSuccess) => {
     document.getElementById(errorSummaryId).focus();
   };
 
-  const validateForm = (onSuccess) => (event) => {
+  const validateForm = async (event) => {
     event.preventDefault();
     const inputsWithErrorMessages = inputs
       .map((inputElement) => {
@@ -204,8 +204,10 @@ const addValidationToForm = (formId, onSuccess) => {
 
     const formIsValid = !inputsWithErrorMessages.length;
     if (formIsValid) {
-      onSuccess();
-      resetForm();
+      const canReset = await onSuccess();
+      if (canReset) {
+        resetForm();
+      }
     } else {
       addErrorSummary(inputsWithErrorMessages);
     }
@@ -249,7 +251,7 @@ const addValidationToForm = (formId, onSuccess) => {
     }
   }
 
-  form.addEventListener("submit", validateForm(onSuccess));
+  form.addEventListener("submit", validateForm);
   pureInputs.forEach(input => input.addEventListener("keydown", submitOnEnter));
   inputs.forEach((input) => {
     addErrorFields(input);
