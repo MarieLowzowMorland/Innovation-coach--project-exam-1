@@ -20,6 +20,10 @@ main {
   width: 100%;
 }
 
+main.loading > *:not(#loader) {
+  display: none;
+}
+
 * {
   box-sizing: border-box;
 }

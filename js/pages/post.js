@@ -92,6 +92,8 @@ const resizeIframes = () => {
 };
 
 const addPostToHtml = (post) => {
+  document.querySelector("main").classList.remove("loading");
+  document.getElementById("loader").remove();
   document.querySelector("main").insertAdjacentHTML("afterBegin", postToHtml(post));
   document.title = `${post.title} | Innovation Coach`
   resizeIframes();

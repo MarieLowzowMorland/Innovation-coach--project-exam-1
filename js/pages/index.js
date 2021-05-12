@@ -17,8 +17,11 @@ const addFirstPostToHtml = (firstPost) => {
   search.insertAdjacentHTML("beforebegin", postToHtml(firstPost));
 };
 
-addSearchbarTo(document.getElementById("first-post-container"));
 findPosts().then((postsResponse) => {
+  document.querySelector("main").classList.remove("loading");
+  document.getElementById("loader").remove();
+  addSearchbarTo(document.getElementById("first-post-container"));
+
   const posts = postsResponse.posts;
   if( !posts || !posts.length ){
     return;

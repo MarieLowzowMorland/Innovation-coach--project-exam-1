@@ -38,7 +38,9 @@ const addCategoryOptions = (categories) => {
 
 const addSearchbarTo = (element, textSearch, topicSearch) => {
   element.insertAdjacentHTML("afterbegin", searchbarTemplate());
-  document.getElementById("search-text").value = textSearch;
+  if( textSearch ) {
+    document.getElementById("search-text").value = textSearch;
+  }
   findCategoriesWithPosts().then(categories => {
     addCategoryOptions(categories);
     if(topicSearch && categories.find(category => category.id.toString() === topicSearch)){

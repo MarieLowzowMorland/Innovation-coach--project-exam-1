@@ -1,6 +1,7 @@
 @import "../common/variables.css";
 @import "../common/text.css";
 @import "../common/layouts.css";
+@import "../common/loader.css";
 @import "../components/buttons.css";
 @import "../components/searchbar.css";
 @import "../components/post.css";

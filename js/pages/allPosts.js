@@ -58,7 +58,10 @@ const addNoResultMessage = () => {
 
 const addPostsToHtml = (postsResponse) => {
   const { totalPages, posts } = postsResponse;
-  console.log(posts);
+  document.querySelector("main").classList.remove("loading");
+  document.getElementById("loader").remove();
+  addSearchbarTo(document.getElementById("posts-container"), search, topic);
+
   if(!posts || !posts.length){
     addNoResultMessage();
     hideFetchMorePostsButton();
@@ -76,5 +79,4 @@ const addPostsToHtml = (postsResponse) => {
   document.getElementById("more-posts").addEventListener("click", fetchMorePosts);
 };
 
-addSearchbarTo(document.getElementById("posts-container"), search, topic);
 findPosts(pageNumber, topic, search).then(addPostsToHtml);
