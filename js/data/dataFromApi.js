@@ -1,5 +1,5 @@
 const apiPostsBaseUrl = "https://morlanddesign.one/innovation-coach-admin/wp-json/wp/v2/posts";
-const apiCategoriesUrl = "https://morlanddesign.one/innovation-coach-admin/wp-json/wp/v2/categories";
+const apiCategoriesUrl = "https://morlanddesign.one/innovation-coach-admin/wp-json/wp/v2/categories?per_page=100";
 
 export const findCategoriesWithPosts = async () => {
   try {
@@ -45,8 +45,9 @@ export const findPosts = async (pageNumber, topic, search) => {
       throw new Error("Error, maybe no more results");
     }
 
+    const totalPages = response.headers.get("x-wp-totalpages");
     const postsFromWP = await response.json();
-    return postsFromWP.map(postInfo);
+    return { totalPages, posts: postsFromWP.map(postInfo) };
   } catch (error) {
     console.log(error);
   }

@@ -1,13 +1,11 @@
 export const Logo = () => /*template*/`
-  <svg data-name="Component 14 – 1" xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
-    <title>Home</title>
+  <svg data-name="Component 14 – 1" xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63" role="img" aria-label="Home.">
     <circle data-name="Ellipse 10" cx="31.5" cy="31.5" r="31.5"/>
     <text transform="translate(5.597 43.2)" fill="#fff" font-size="31"><tspan x="0" y="0">InC</tspan></text>
   </svg>`;
 
 export const HamburgerMenu = () => /*template*/`
-  <svg xmlns="http://www.w3.org/2000/svg" width="34" height="18" viewBox="0 0 34 18">
-    <title>Hamburger menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="34" height="18" viewBox="0 0 34 18" role="img" aria-label="Hamburger menu.">
     <g transform="translate(2 2)">
       <g>
         <line id="Line_13" data-name="Line 13" x2="30" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"></line>
@@ -87,3 +85,28 @@ export const FieldValid = () => /*template*/ `
   <svg xmlns="http://www.w3.org/2000/svg" width="25.331" height="30.61" viewBox="0 0 25.331 30.61">
     <path data-name="Path 523" d="M17.141-1.366c2.428-5.7,2.819,7.192,9.127,13.009-5.107-.456-7.9-7.231-7.9-7.231S10.3,24.092.937,27.824C14.189,13.484,14.713,4.33,17.141-1.366Z" transform="translate(26.268 27.824) rotate(180)" fill="#79a500"/>
   </svg>`;
+
+export const SadFace = () => /*template*/ `
+  <svg xmlns="http://www.w3.org/2000/svg" width="113.072" height="90.433" viewBox="0 0 113.072 90.433" role="img" aria-label="Sad face, illustraion.">
+  <g data-name="Group 861" transform="translate(-546.707 -479.724)">
+    <g data-name="Group 859">
+      <g data-name="Ellipse 26" transform="translate(561 499)" fill="#707070" stroke="#707070" stroke-width="1">
+        <circle cx="16" cy="16" r="16" stroke="none"/>
+        <circle cx="16" cy="16" r="15.5" fill="none"/>
+      </g>
+      <circle data-name="Ellipse 27" cx="5.5" cy="5.5" r="5.5" transform="translate(566 515)" fill="#fff"/>
+      <ellipse data-name="Ellipse 28" cx="5" cy="4" rx="5" ry="4" transform="translate(573 501)" fill="#fff"/>
+    </g>
+    <g data-name="Group 860" transform="translate(59)">
+      <g data-name="Ellipse 26" transform="translate(561 499)" fill="#707070" stroke="#707070" stroke-width="1">
+        <circle cx="16" cy="16" r="16" stroke="none"/>
+        <circle cx="16" cy="16" r="15.5" fill="none"/>
+      </g>
+      <circle data-name="Ellipse 27" cx="5.5" cy="5.5" r="5.5" transform="translate(566 515)" fill="#fff"/>
+      <ellipse data-name="Ellipse 28" cx="5" cy="4" rx="5" ry="4" transform="translate(573 501)" fill="#fff"/>
+    </g>
+    <path data-name="Path 524" d="M18837.846-7850.624s17-13.613,39.314-17.662,37.445,0,37.445,0" transform="translate(-18272.281 8420)" fill="none" stroke="#707070" stroke-width="2"/>
+    <path data-name="Path 525" d="M18846.658-7859.108s13.551-2.937,37.5-18.86" transform="translate(-18299.846 8362.869)" fill="none" stroke="#707070" stroke-width="1"/>
+    <path data-name="Path 526" d="M18884.162-7859.108s-13.551-2.937-37.5-18.86" transform="translate(-18224.488 8358.108)" fill="none" stroke="#707070" stroke-width="1"/>
+  </g>
+</svg>`;

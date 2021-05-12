@@ -18,7 +18,12 @@ const addFirstPostToHtml = (firstPost) => {
 };
 
 addSearchbarTo(document.getElementById("first-post-container"));
-findPosts().then((posts) => {
+findPosts().then((postsResponse) => {
+  const posts = postsResponse.posts;
+  if( !posts || !posts.length ){
+    return;
+  }
+
   const firstPost = posts.shift();
   addFirstPostToHtml(firstPost);
   createCarousel(posts, ".post-slider-wrapper");

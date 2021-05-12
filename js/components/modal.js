@@ -5,7 +5,7 @@ const modalTemplate = (imageSrc, imageAltText, caption) => /*template*/`
   <div id="${modalWrapperId}" role="dialog">
     <div id="overlay"></div>
     <div class="modal">
-      <button id="close-modal" class="discrete-button" aria-label="Close modal">${Remove()}</button>
+      <button id="close-modal" class="discrete-button" aria-label="Close modal.">${Remove()}</button>
       <figure class="modal-image">
         <img src="${imageSrc}" alt="${imageAltText}" />
         <figcaption>${caption}</figcaption>

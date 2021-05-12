@@ -1,9 +1,5 @@
 const postToHtml = (post) => {
   const { id, dateString, title, summary, featuredImage} = post;
-  let altTextAttribute = "";
-  if(featuredImage.alt_text){
-    altTextAttribute = `aria-label="${featuredImage.alt_text}"`
-  }
 
   return /*template*/`
     <div class="post-wrapper">
@@ -16,7 +12,8 @@ const postToHtml = (post) => {
           <div class="article-introduction">${summary}</div>
           <p class="link">Read more </p>
         </div>
-        <div role="img" ${altTextAttribute}
+        <!-- No alt text for posts in a "list" context -->
+        <div role="img" 
           class="post-image-wrapper" 
           style='background-image: url("${featuredImage.src}")'>
         </div>

@@ -56,11 +56,11 @@ const toggleVideo = (event) => {
   if(playing){
     video.pause();
     videControl.innerHTML = Play();
-    videControl.setAttribute("aria-label", "Play background video");
+    videControl.setAttribute("aria-label", "Play background video.");
   } else {
     video.play();
     videControl.innerHTML = Pause();
-    videControl.setAttribute("aria-label", "Pause background video");
+    videControl.setAttribute("aria-label", "Pause background video.");
   }
   playing = !playing;
 }
@@ -133,7 +133,7 @@ const navTemplate = (selectedPage) => /*template*/ `
             <a class="cta" href="allPosts.html"> See newest articles </a>
           </div>
           </div>
-        <button id="video-control" aria-label="Pause background video">${Pause()}</button>
+        <button id="video-control" aria-label="Pause background video.">${Pause()}</button>
       </div>
       <video id="homepage-video" width="320" height="240" autoplay muted loop playsinline src="videos/homepage-video.mp4" poster="images/banner.jpg">
         Your browser does not support the video tag.

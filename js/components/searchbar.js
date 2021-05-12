@@ -22,21 +22,29 @@ const searchbarTemplate = () => /*template*/`
         <div class="arrow">${ArrowDropdown()}</div>
       </div>
       <div class="separator-line"><span></span></div>
-      <button type="submit" id="search-button" aria-label="Search">${Search()}</button>
+      <button type="submit" id="search-button" aria-label="Search.">${Search()}</button>
     </div>
   </form>`;
 
 const addCategoryOptions = (categories) => {
-  const options = categories.map(category => 
-    /*template*/`<option value="${category.id}">${category.name}</option>`
-  );
+  const options = categories
+    .map(category => 
+      /*template*/`<option value="${category.id}">${category.name}</option>`
+    )
+    .join("");
 
   document.querySelector("#search-container select option").insertAdjacentHTML("afterend", options);
 }
 
-const addSearchbarTo = (element) => {
+const addSearchbarTo = (element, textSearch, topicSearch) => {
   element.insertAdjacentHTML("afterbegin", searchbarTemplate());
-  findCategoriesWithPosts().then(addCategoryOptions)
+  document.getElementById("search-text").value = textSearch;
+  findCategoriesWithPosts().then(categories => {
+    addCategoryOptions(categories);
+    if(topicSearch && categories.find(category => category.id.toString() === topicSearch)){
+      document.querySelector(`#search-topic option[value="${topicSearch}"]`).setAttribute("selected", "selected");
+    }
+  });
 };
 
 export default addSearchbarTo;

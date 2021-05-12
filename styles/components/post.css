@@ -1,8 +1,3 @@
-.article-introduction p,
-.link {
-  display: none;
-}
-
 .post {
   display: flex;
   flex-direction: column;
@@ -13,64 +8,91 @@
   justify-content: center;
 }
 
+.post-wrapper {
+  padding: 0 20px 20px;
+}
+
+.post-wrapper + .post-wrapper {
+  border-top: 5px solid var(--primary);
+}
+
 .post:hover .link {
   font-weight: bold;
   color: var(--secondary);
   text-decoration: underline;
 }
 
-.post:nth-child(even) {
+.post-wrapper:nth-child(odd) {
   background-color: var(--bg-secondary);
 }
 
+.article-introduction p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.article-introduction p + p {
+  display: none;
+}
+
+.link {
+  margin: 15px auto;
+  text-align: center;
+  text-decoration: underline;
+  color: var(--text-primary);
+}
+
 .post > .post-image-wrapper {
-  width: calc(100vw - 40px);
-  height: calc(100vw - 40px);
-  max-width: 500px;
-  max-height: 500px;
-  margin: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 500px) {
+  .post-wrapper {
+    padding: 0 20px;
+  }
+
   .post > div:first-child {
-    padding: 50px;
+    padding: 10px 20px;
     flex: 1;
     max-width: 35rem;
   }
 
-  .post-wrapper:nth-child(odd) .post {
+  .post-wrapper:nth-child(even) .post {
     flex-direction: row;
   }
 
-  .post-wrapper:nth-child(even) .post {
+  .post-wrapper:nth-child(odd) .post {
     flex-direction: row-reverse;
   }
 
-  .post .post-image-wrapper {
-    border-radius: 50%;
-  }
-
   .article-introduction p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
   }
 
-  .article-introduction p + p {
-    display: none;
+  .post > .post-image-wrapper {
+    margin: 0;
+    width: 150px;
+    height: 150px;
+    box-shadow: var(--thin-shadow);
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .post-wrapper + .post-wrapper {
+    border-top: none;
   }
 
-  .link {
-    margin: 15px auto 0;
-    text-align: center;
-    display: block;
-    text-decoration: underline;
-    color: var(--text-primary);
+  .post > div:first-child {
+    padding: 50px;
   }
 
   .post > .post-image-wrapper {

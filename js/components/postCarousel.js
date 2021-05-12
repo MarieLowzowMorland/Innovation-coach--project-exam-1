@@ -76,7 +76,7 @@ const startCarousel = (posts, postSlider) => {
 };
 
 const controlElement = (direction, iconFunction) => /*template*/`
-  <button class="controls control-${direction}" aria-label="${direction}">
+  <button class="controls control-${direction}" aria-label="${direction}.">
     ${iconFunction()}
   </div>`;
 
@@ -86,7 +86,8 @@ const postToHtml = (post) => {
   return /*template*/`
     <a href="post.html?id=${id}" class="reverse-column-order ${postCarouselClass}">
       <h3>${title}</h3>
-      <img alt="${featuredImage.alt_text || ''}" src="${featuredImage.src}"/>
+      <!-- No alt text for posts inside an anchor tag -->
+      <img alt="" src="${featuredImage.src}"/>
     </a>`;
 };
 

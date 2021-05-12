@@ -222,10 +222,10 @@ const addValidationToForm = (formId, onSuccess) => {
       /*template*/ `
       <div class="input-wrapper">
         <div class="field-icon">
-          <button aria-label="Toggle visual error message" class="error-info-toggle">
+          <button aria-label="Toggle visual error message." class="error-info-toggle">
             ${FieldError()}
           </button>
-          <div aria-label="Field valid" class="field-valid-icon">
+          <div aria-label="Field valid." class="field-valid-icon">
             ${FieldValid()}
           </div>
         </div>

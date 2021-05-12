@@ -7,15 +7,6 @@
 @import "../templates/header.css";
 @import "../templates/footer.css";
 
-.hidden {
-  display: none;
-}
-
-#posts-container .post-wrapper:nth-child(even) {
-  width: 100%;
-  background-color: var(--bg-secondary);
-}
-
 #posts-container {
   width: 100%;
 }
@@ -27,5 +18,32 @@
 
 #more-posts {
   margin: 50px auto 0;
+  display: block;
+}
+
+#more-posts.hidden {
+  display: none;
+}
+
+#no-result {
+  margin: 50px 20px;
+}
+
+#no-result p {
+  margin: 0 auto;
+}
+
+#no-result a {
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+#no-result a:hover {
+  text-decoration: none;
+  color: var(--tertiary);
+}
+
+#no-result svg {
+  margin: 40px auto;
   display: block;
 }

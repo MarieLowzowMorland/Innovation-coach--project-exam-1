@@ -159,6 +159,10 @@ main section {
   margin: 0 auto;
 }
 
+.post-wrapper:nth-child(odd) {
+  background-color: var(--bg-primary);
+}
+
 .post {
   max-width: 1300px;
   margin: 0 auto;
