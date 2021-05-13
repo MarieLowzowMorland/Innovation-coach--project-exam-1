@@ -76,6 +76,7 @@ const addHeaderForPage = (selectedPage) => {
     const bannerCircle = document.querySelector("header .banner-circle");
     const homepageVideo = document.getElementById("homepage-video");
     const videoControl = document.getElementById("video-control");
+    const initialAvailableWidth = window.innerWidth;
     let initialAvailableHeight = window.innerHeight;
     if( initialAvailableHeight > 1500){
       initialAvailableHeight = 1500;
@@ -85,9 +86,12 @@ const addHeaderForPage = (selectedPage) => {
     homepageVideo.addEventListener("click", toggleVideo)
     videoControl.addEventListener("click", toggleVideo)
 
-    bannerCircle.style.height = `${initialAvailableHeight}px`;
     homepageVideo.style.height = `${initialAvailableHeight}px`;
     videoControl.style.top = `calc(${initialAvailableHeight}px - 5rem)`;
+    bannerCircle.style.height = `${initialAvailableHeight}px`;
+    if(initialAvailableWidth >= 768){
+      bannerCircle.style.marginTop = `${initialAvailableHeight/2}px`;
+    }
   }
 };
 
