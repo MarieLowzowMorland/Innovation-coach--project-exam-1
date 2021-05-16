@@ -79,7 +79,8 @@ header video {
 }
 
 .cta {
-  display: block;
+  display: flex;
+  justify-content: center;
   margin: 1rem auto 2rem;
   width: max-content;
   background-color: var(--secondary);
@@ -91,10 +92,20 @@ header video {
   box-shadow: var(--shadow);
 }
 
+.cta svg {
+  margin-left: 15px;
+  height: 1rem;
+}
+
 .cta:focus,
-.cta:hover {
+.cta:hover,
+.cta:focus line,
+.cta:hover line,
+.cta:focus path,
+.cta:hover path {
   background-color: var(--primary);
   color: var(--secondary);
+  stroke: var(--secondary);
 }
 
 @media screen and (min-width: 768px) {

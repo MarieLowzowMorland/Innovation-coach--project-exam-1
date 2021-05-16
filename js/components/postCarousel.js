@@ -10,6 +10,7 @@ const calculateNumberOfVisiblePosts = (postSlider) => {
 }
 
 const startCarousel = (posts, postSlider) => {
+  let hasMarkedLiveRegion = false;
   let firstVisiblePost = 0; //Index that will be the first rendered 
   let numberOfVisiblePosts = calculateNumberOfVisiblePosts(postSlider);
 
@@ -54,6 +55,11 @@ const startCarousel = (posts, postSlider) => {
       firstVisiblePost = indexMinusOne(firstVisiblePost);
     }
 
+    if(!hasMarkedLiveRegion) {
+      hasMarkedLiveRegion = true;
+      postSlider.setAttribute("aria-live", "polite");
+    }
+
     showPosts();
   }
   document.querySelector(".control-previous").addEventListener("click", goLeft);
@@ -62,6 +68,12 @@ const startCarousel = (posts, postSlider) => {
     for(let i = 0; i < numberOfVisiblePosts; i++){
       firstVisiblePost = indexPlusOne(firstVisiblePost);
     }
+
+    if(!hasMarkedLiveRegion) {
+      hasMarkedLiveRegion = true;
+      postSlider.setAttribute("aria-live", "polite");
+    }
+    
     showPosts();
   }
   document.querySelector(".control-next").addEventListener("click", goRight);

@@ -89,7 +89,7 @@ textarea {
 }
 
 .error-info-toggle svg:hover circle {
-  fill: var(--error-hover);
+  fill: var(--secondary);
 }
 
 .invalid .error-info-toggle {
@@ -101,6 +101,8 @@ textarea {
 .invalid .error-info-toggle svg{
   width: auto;
   height: 100%;
+  box-shadow: var(--thin-shadow);
+  border-radius: 50%;
 }
 
 .form-error p {

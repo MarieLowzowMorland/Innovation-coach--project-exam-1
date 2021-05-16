@@ -1,29 +1,36 @@
 import { HamburgerMenu, Logo, Play, Pause } from "../templates/svgIcons.js";
+import { ArrowDown } from "../templates/svgIcons.js";
 
 export const pageNames = {
   HOME: {
     name: "Home",
     url: "index.html",
+    hasSearch: true,
   },
   ALL_POSTS: {
     name: "All Posts",
     url: "allPosts.html",
+    hasSearch: true,
   },
   POST: {
     name: "Post",
     url: "post.html",
+    hasSearch: false,
   },
   TOOLS_AND_LINKS: {
     name: "Tools and Links",
     url: "toolsAndLinks.html",
+    hasSearch: false,
   },
   ABOUT: {
     name: "About",
     url: "about.html",
+    hasSearch: false,
   },
   CONTACT: {
     name: "Contact",
     url: "contact.html",
+    hasSearch: false,
   },
 };
 
@@ -53,7 +60,7 @@ const toggleVideo = (event) => {
   const videControl = document.getElementById("video-control");
   const video = document.getElementById("homepage-video");
 
-  if(playing){
+  if (playing) {
     video.pause();
     videControl.innerHTML = Play();
     videControl.setAttribute("aria-label", "Play background video.");
@@ -63,7 +70,7 @@ const toggleVideo = (event) => {
     videControl.setAttribute("aria-label", "Pause background video.");
   }
   playing = !playing;
-}
+};
 
 const addHeaderForPage = (selectedPage) => {
   document
@@ -72,25 +79,25 @@ const addHeaderForPage = (selectedPage) => {
 
   document.querySelector("#menu button").addEventListener("click", toggleMenu);
   stickyNav();
-  if(selectedPage === pageNames.HOME){
+  if (selectedPage === pageNames.HOME) {
     const bannerCircle = document.querySelector("header .banner-circle");
     const homepageVideo = document.getElementById("homepage-video");
     const videoControl = document.getElementById("video-control");
     const initialAvailableWidth = window.innerWidth;
     let initialAvailableHeight = window.innerHeight;
-    if( initialAvailableHeight > 1500){
+    if (initialAvailableHeight > 1500) {
       initialAvailableHeight = 1500;
     }
 
-    bannerCircle.addEventListener("click", toggleVideo)
-    homepageVideo.addEventListener("click", toggleVideo)
-    videoControl.addEventListener("click", toggleVideo)
+    bannerCircle.addEventListener("click", toggleVideo);
+    homepageVideo.addEventListener("click", toggleVideo);
+    videoControl.addEventListener("click", toggleVideo);
 
     homepageVideo.style.height = `${initialAvailableHeight}px`;
     videoControl.style.top = `calc(${initialAvailableHeight}px - 5rem)`;
     bannerCircle.style.height = `${initialAvailableHeight}px`;
-    if(initialAvailableWidth >= 768){
-      bannerCircle.style.marginTop = `${initialAvailableHeight/2}px`;
+    if (initialAvailableWidth >= 768) {
+      bannerCircle.style.marginTop = `${initialAvailableHeight / 2}px`;
     }
   }
 };
@@ -98,14 +105,22 @@ const addHeaderForPage = (selectedPage) => {
 const link = (selectedPage, linkToPage) => /*template*/ `
   <li>
     <a href="${linkToPage.url}" data-text="${linkToPage.name}" class="${
-      selectedPage === linkToPage ? "active" : ""
-    } discrete-button">
+  selectedPage === linkToPage ? "active" : ""
+} discrete-button">
       ${linkToPage.name}
     </a>
     <span class="circle"></span>
   </li>`;
 
+const searchSkiplink = () => /*template*/`<li><a href="#search-container" class="skiplink">Search</a></li>`;
+
 const navTemplate = (selectedPage) => /*template*/ `
+  <nav id="skiplink" aria-label="Skip to content">
+    <ul>
+      ${selectedPage.hasSearch ? searchSkiplink() : ""}
+      <li><a href="#main" class="skiplink">Main content</a></li>
+    </ul>
+  </nav>
   <nav>
     <div id="menu">
       <div>
@@ -114,7 +129,7 @@ const navTemplate = (selectedPage) => /*template*/ `
         >
           ${Logo()}
         </a>
-        <button class="tablet-hidden">
+        <button class="tablet-hidden" aria-label="Hamburger menu.">
           <span id="hamburger-menu">${HamburgerMenu()}</span>
         </button>
       </div>
@@ -126,7 +141,7 @@ const navTemplate = (selectedPage) => /*template*/ `
     </div>
   </nav>`;
 
-  const homePageTemplate = () => /*template*/ `
+const homePageTemplate = () => /*template*/ `
     <header class="homepage">
       ${navTemplate(pageNames.HOME)}
       <div class="banner-content">
@@ -134,7 +149,7 @@ const navTemplate = (selectedPage) => /*template*/ `
           <div>
             <h1 class="blog-name">Innovation Coach</h1>
             <p class="slogan">Helping you connect the dots</p>
-            <a class="cta" href="allPosts.html"> See newest articles </a>
+            <a class="cta" href="#first-post-container"> See newest articles ${ArrowDown()}</a>
           </div>
           </div>
         <button id="video-control" aria-label="Pause background video.">${Pause()}</button>
@@ -144,14 +159,14 @@ const navTemplate = (selectedPage) => /*template*/ `
       </video>
     </header>`;
 
-  const headerTemplate = (selectedPage) => {
-    if(selectedPage === pageNames.HOME) {
-      return homePageTemplate();
-    } else {
-      return /*template*/ `
+const headerTemplate = (selectedPage) => {
+  if (selectedPage === pageNames.HOME) {
+    return homePageTemplate();
+  } else {
+    return /*template*/ `
         <header>${navTemplate(selectedPage)}</header>
       `;
-    }
-  };
+  }
+};
 
 export default addHeaderForPage;

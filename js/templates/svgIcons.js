@@ -5,7 +5,7 @@ export const Logo = () => /*template*/`
   </svg>`;
 
 export const HamburgerMenu = () => /*template*/`
-  <svg xmlns="http://www.w3.org/2000/svg" width="34" height="18" viewBox="0 0 34 18" role="img" aria-label="Hamburger menu.">
+  <svg xmlns="http://www.w3.org/2000/svg" width="34" height="18" viewBox="0 0 34 18" role="img">
     <g transform="translate(2 2)">
       <g>
         <line id="Line_13" data-name="Line 13" x2="30" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"></line>
@@ -105,8 +105,16 @@ export const SadFace = () => /*template*/ `
       <circle data-name="Ellipse 27" cx="5.5" cy="5.5" r="5.5" transform="translate(566 515)" fill="#fff"/>
       <ellipse data-name="Ellipse 28" cx="5" cy="4" rx="5" ry="4" transform="translate(573 501)" fill="#fff"/>
     </g>
-    <path data-name="Path 524" d="M18837.846-7850.624s17-13.613,39.314-17.662,37.445,0,37.445,0" transform="translate(-18272.281 8420)" fill="none" stroke="#707070" stroke-width="2"/>
-    <path data-name="Path 525" d="M18846.658-7859.108s13.551-2.937,37.5-18.86" transform="translate(-18299.846 8362.869)" fill="none" stroke="#707070" stroke-width="1"/>
-    <path data-name="Path 526" d="M18884.162-7859.108s-13.551-2.937-37.5-18.86" transform="translate(-18224.488 8358.108)" fill="none" stroke="#707070" stroke-width="1"/>
+      <path data-name="Path 524" d="M18837.846-7850.624s17-13.613,39.314-17.662,37.445,0,37.445,0" transform="translate(-18272.281 8420)" fill="none" stroke="#707070" stroke-width="2"/>
+      <path data-name="Path 525" d="M18846.658-7859.108s13.551-2.937,37.5-18.86" transform="translate(-18299.846 8362.869)" fill="none" stroke="#707070" stroke-width="1"/>
+      <path data-name="Path 526" d="M18884.162-7859.108s-13.551-2.937-37.5-18.86" transform="translate(-18224.488 8358.108)" fill="none" stroke="#707070" stroke-width="1"/>
+    </g>
+  </svg>`;
+
+export const ArrowDown = () => /*template*/ `
+  <svg xmlns="http://www.w3.org/2000/svg" width="15.302" height="20.412" viewBox="0 0 15.302 20.412">
+  <g id="Group_863" data-name="Group 863" transform="translate(-436.509 -519.575)">
+    <line id="Line_40" data-name="Line 40" y2="18.925" transform="translate(444.5 519.575)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Path_527" data-name="Path 527" d="M13221.178-5659l7.343,6.609,6.581-6.609" transform="translate(-12784 6191)" fill="none" stroke="#fff" stroke-width="2"/>
   </g>
-</svg>`;
+  </svg>`;

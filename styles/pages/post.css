@@ -74,7 +74,11 @@ figcaption {
   font-style: italic;
 }
 
-.summary p {
+.summary figcaption p {
+  margin-top: 10px;
+}
+
+.summary > p:first-child {
   border: 1px solid var(--text-primary);
   border-left: 0;
   border-right: 0;

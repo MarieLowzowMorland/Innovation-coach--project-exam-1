@@ -78,8 +78,8 @@ const postInfo = (postFromWP) => {
 
   const featuredImage = _embedded["wp:featuredmedia"]
     .map(media => {
-      const { id, alt_text, source_url } = media;
-      return {id, alt_text, src: source_url }
+      const { id, alt_text, source_url, caption } = media;
+      return {id, alt_text, src: source_url, caption: caption.rendered }
     })[0];
 
   const categories = _embedded["wp:term"][0]

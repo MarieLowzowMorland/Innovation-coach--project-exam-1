@@ -38,8 +38,17 @@ button {
 
 a {
   font-weight: bold;
+  color: var(--text-primary);
 }
 
 label {
   font-family: var(--font-secondary);
+}
+
+figcaption {
+  font-family: 'century-gothic';
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-primary);
+  margin-top: 10px;
 }

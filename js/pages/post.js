@@ -9,8 +9,8 @@ addFooterForPage();
 const postId = new URLSearchParams(location.search).get("id");
 
 const postToHtml = (post) => {
-  const { dateString, title, content, summary, featuredImage} = post;
-  const { alt_text, src} = featuredImage;
+  const { dateString, title, content, summary, featuredImage } = post;
+  const { alt_text, src, caption } = featuredImage;
 
   return /*template*/`
     <div>
@@ -22,6 +22,7 @@ const postToHtml = (post) => {
         ${summary}
         <figure class="wp-block-image">
           <img alt="${alt_text}" src="${src}"/>
+          <figcaption>${caption}</figcaption>
         </figure>
       </div>
       ${content}

@@ -6,7 +6,7 @@ const addUserMessage = (message) => {
   }
 
   const messagesContainer = document.getElementById("user-messages");
-  messagesContainer.insertAdjacentHTML("afterbegin", `<p>${message}</p>`);
+  messagesContainer.insertAdjacentHTML("afterbegin", `<div><p>${message}</p></div>`);
   const newMessageElement = messagesContainer.firstChild;
   setTimeout(() => newMessageElement.remove(), 3000);
 };

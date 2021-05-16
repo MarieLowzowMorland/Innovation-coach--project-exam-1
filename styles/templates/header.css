@@ -19,6 +19,12 @@ nav.stick-to-top {
   box-shadow: var(--thin-shadow);
 }
 
+#skiplink{
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+
 .logo svg {
   height: 3rem;
   width: auto;
@@ -73,7 +79,7 @@ nav.stick-to-top {
   background-color: var(--bg-primary);
 }
 
-nav ul {
+nav:not(#skiplink) ul {
   display: none;
   border: 0;
   margin: 0;
@@ -89,7 +95,7 @@ nav ul {
   box-shadow: var(--thin-shadow);
 }
 
-nav li {
+nav:not(#skiplink) li {
   border-bottom: 1px solid var(--text-primary);
   margin-top: 0.4rem;
   width: 100%;
@@ -117,6 +123,29 @@ nav li a:hover {
   color: var(--secondary);
 }
 
+#skiplink a{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+}
+
+#skiplink a:focus {
+  top: 4rem;
+  left: 10%;
+  clip: auto;
+  z-index: 9999;
+  padding: 10px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  background-color: var(--secondary);
+  box-shadow: var(--thin-shadow);
+  height: auto;
+  width: auto;
+}
+
 @media screen and (min-width: 768px) {
   .homepage nav {
     background-image: linear-gradient(to bottom, #ffffff, #ffffffcc);
@@ -128,7 +157,7 @@ nav li a:hover {
     justify-content: center;
   }
 
-  nav ul {
+  nav:not(#skiplink) ul {
     background-color: inherit;
     height: 4rem;
     max-width: 100%;
@@ -139,7 +168,7 @@ nav li a:hover {
     padding: 0 30px 10px;
   }
 
-  nav li {
+  nav:not(#skiplink) li {
     display: inline-flex;
     width: auto;
     flex-direction: column;
@@ -147,7 +176,7 @@ nav li a:hover {
     border-bottom: none;
   }
 
-  nav li a::after {
+  nav:not(#skiplink) li a::after {
     content: attr(data-text);
     font-weight: bold;
     display: block;
