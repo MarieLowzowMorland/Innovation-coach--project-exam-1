@@ -1,4 +1,4 @@
-nav {
+#main-nav {
   position: fixed;
   z-index: 1001;
   top: 0;
@@ -7,22 +7,16 @@ nav {
   box-shadow: var(--thin-shadow);
 }
 
-.homepage nav {
+.homepage #main-nav {
   background-color: transparent;
   box-shadow: none;
   transition: background-color 0.5s ease-in;
 }
 
-nav.stick-to-top {
+#main-nav.stick-to-top {
   background-color: var(--bg-primary);
   background-image: none;
   box-shadow: var(--thin-shadow);
-}
-
-#skiplink{
-  background-color: transparent;
-  background-image: none;
-  box-shadow: none;
 }
 
 .logo svg {
@@ -79,14 +73,14 @@ nav.stick-to-top {
   background-color: var(--bg-primary);
 }
 
-nav:not(#skiplink) ul {
+#main-nav ul {
   display: none;
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-.open-menu ul {
+#main-nav .open-menu ul {
   display: block;
   position: fixed;
   list-style: none;
@@ -95,32 +89,37 @@ nav:not(#skiplink) ul {
   box-shadow: var(--thin-shadow);
 }
 
-nav:not(#skiplink) li {
+#main-nav li {
   border-bottom: 1px solid var(--text-primary);
   margin-top: 0.4rem;
   width: 100%;
 }
 
-nav li:last-child {
+#main-nav li:last-child {
   border-bottom: none;
 }
 
-nav a {
+#main-nav a {
   text-decoration: none;
 }
 
-nav li a {
+#main-nav li a {
   display: block;
   font-size: 1rem;
   color: var(--text-primary);
   font-weight: lighter;
 }
 
-nav li a.active,
-nav li a:focus,
-nav li a:hover {
+#main-nav li a.active,
+#main-nav li a:focus,
+#main-nav li a:hover {
   font-weight: bold;
   color: var(--secondary);
+}
+
+#skiplink ul{ 
+  list-style: none;
+  margin: 0;
 }
 
 #skiplink a{
@@ -147,7 +146,7 @@ nav li a:hover {
 }
 
 @media screen and (min-width: 768px) {
-  .homepage nav {
+  .homepage #main-nav {
     background-image: linear-gradient(to bottom, #ffffff, #ffffffcc);
     box-shadow: var(--thin-shadow);
   }
@@ -157,7 +156,7 @@ nav li a:hover {
     justify-content: center;
   }
 
-  nav:not(#skiplink) ul {
+  #main-nav ul {
     background-color: inherit;
     height: 4rem;
     max-width: 100%;
@@ -168,7 +167,7 @@ nav li a:hover {
     padding: 0 30px 10px;
   }
 
-  nav:not(#skiplink) li {
+  #main-nav li {
     display: inline-flex;
     width: auto;
     flex-direction: column;
@@ -176,7 +175,7 @@ nav li a:hover {
     border-bottom: none;
   }
 
-  nav:not(#skiplink) li a::after {
+  #main-nav li a::after {
     content: attr(data-text);
     font-weight: bold;
     display: block;
@@ -187,13 +186,13 @@ nav li a:hover {
     pointer-events: none;
   }
 
-  nav li a:focus,
-  nav li a:hover {
+  #main-nav li a:focus,
+  #main-nav li a:hover {
     background-image: none;
     font-weight: bold;
   }
 
-  nav li .circle {
+  #main-nav li .circle {
     border-radius: 50%;
     height: 0px;
     width: 0px;
@@ -201,9 +200,9 @@ nav li a:hover {
     transition: width 0.2s ease-in, height 0.2s ease-in;
   }
 
-  nav li a.active + .circle,
-  nav li a:hover + .circle,
-  nav li a:focus + .circle {
+  #main-nav li a.active + .circle,
+  #main-nav li a:hover + .circle,
+  #main-nav li a:focus + .circle {
     background-color: var(--primary);
     box-shadow: var(--thick-shadow);
     height: 0.8rem;
@@ -212,21 +211,21 @@ nav li a:hover {
 }
 
 @media screen and (min-width: 1025px) {
-  nav ul {
+  #main-nav ul {
     width: 900px;
     padding: 0 50px 10px;
   }
 }
 
 @media screen and (min-width: 1300px) {
-  nav ul {
+  #main-nav ul {
     width: 1000px;
     padding: 0 70px 10px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  nav ul {
+  #main-nav ul {
     width: 1400px;
     padding: 0 100px 10px;
   }

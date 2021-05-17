@@ -121,7 +121,7 @@ const navTemplate = (selectedPage) => /*template*/ `
       <li><a href="#main" class="skiplink">Main content</a></li>
     </ul>
   </nav>
-  <nav>
+  <nav id="main-nav">
     <div id="menu">
       <div>
         <a href="${pageNames.HOME.url}"
