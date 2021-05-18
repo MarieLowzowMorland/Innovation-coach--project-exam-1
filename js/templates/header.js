@@ -36,7 +36,7 @@ export const pageNames = {
 
 const stickyNav = () => {
   function checkIfNavbarShouldStickToTop() {
-    const nav = document.querySelector("nav");
+    const nav = document.getElementById("main-nav");
     const topOfNavbar = nav.offsetTop;
 
     if (window.pageYOffset > topOfNavbar) {
