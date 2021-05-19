@@ -43,6 +43,8 @@
   text-align: center;
   text-decoration: underline;
   color: var(--text-primary);
+  display: block;
+  font-weight: lighter;
 }
 
 .post > .post-image-wrapper {
