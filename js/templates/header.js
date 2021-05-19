@@ -102,19 +102,40 @@ const addHeaderForPage = (selectedPage) => {
   }
 };
 
-const link = (selectedPage, linkToPage) => /*template*/ `
+const link = (selectedPage, linkToPage) => {
+  let classNames = "discrete-button";
+  let ariaCurrentAttr = "";
+  if( selectedPage === linkToPage ){
+    classNames += " active";
+    ariaCurrentAttr = 'aria-current="page"';
+  }
+  
+  return /*template*/ `
   <li>
-    <a href="${linkToPage.url}" data-text="${linkToPage.name}" class="${
-  selectedPage === linkToPage ? "active" : ""
-} discrete-button">
+    <a href="${linkToPage.url}" 
+      data-text="${linkToPage.name}"
+      ${ariaCurrentAttr}
+      class="${classNames}">
       ${linkToPage.name}
     </a>
     <span class="circle"></span>
+  </li>`
+};
+
+const searchSkiplink = () => /*template*/ `
+  <li>
+    <a href="#search-container" class="skiplink">Search</a>
   </li>`;
 
-const searchSkiplink = () => /*template*/`<li><a href="#search-container" class="skiplink">Search</a></li>`;
-
-const navTemplate = (selectedPage) => /*template*/ `
+const navTemplate = (selectedPage) => {
+  let homeClassName = "logo";
+  let homeAriaCurrentAttr = "";
+  if( selectedPage === pageNames.HOME ){
+    homeClassName += " active";
+    homeAriaCurrentAttr = 'aria-current="page"';
+  }
+  
+  return /*template*/ `
   <nav id="skiplink" aria-label="Skip to content">
     <ul>
       ${selectedPage.hasSearch ? searchSkiplink() : ""}
@@ -125,7 +146,8 @@ const navTemplate = (selectedPage) => /*template*/ `
     <div id="menu">
       <div>
         <a href="${pageNames.HOME.url}"
-          class="logo ${selectedPage === pageNames.HOME ? "active" : ""}"
+          ${homeAriaCurrentAttr}
+          class="${homeClassName}"
         >
           ${Logo()}
         </a>
@@ -139,7 +161,8 @@ const navTemplate = (selectedPage) => /*template*/ `
         ${link(selectedPage, pageNames.CONTACT)}
       </ul>
     </div>
-  </nav>`;
+  </nav>`
+};
 
 const homePageTemplate = () => /*template*/ `
     <header class="homepage">

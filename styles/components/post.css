@@ -16,7 +16,7 @@
   border-top: 5px solid var(--primary);
 }
 
-.post:hover .link {
+.link:hover {
   font-weight: bold;
   color: var(--secondary);
   text-decoration: underline;
