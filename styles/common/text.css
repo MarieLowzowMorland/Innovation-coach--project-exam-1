@@ -41,9 +41,8 @@ a {
   color: var(--text-primary);
 }
 
-a:focus,
-button:focus {
-
+*:focus, *:focus-visible {
+  outline: var(--focus) 2px solid;
 }
 
 label {
