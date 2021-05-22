@@ -46,6 +46,8 @@
   color: var(--text-primary);
   display: block;
   font-weight: lighter;
+  padding: 15px;
+  cursor: pointer;
 }
 
 .post > .post-image-wrapper {
