@@ -124,7 +124,7 @@ const link = (selectedPage, linkToPage) => {
 
 const searchSkiplink = () => /*template*/ `
   <li>
-    <a href="#search-container" class="skiplink">Search</a>
+    <a href="#search-container" class="skiplink" aria-label="Go to search bar">Search</a>
   </li>`;
 
 const navTemplate = (selectedPage) => {
@@ -136,13 +136,13 @@ const navTemplate = (selectedPage) => {
   }
   
   return /*template*/ `
-  <nav id="skiplink" aria-label="Skip to content">
+  <nav id="skiplink" aria-label="Skiplink menu">
     <ul>
       ${selectedPage.hasSearch ? searchSkiplink() : ""}
-      <li><a href="#main" class="skiplink">Main content</a></li>
+      <li><a href="#main" class="skiplink" aria-label="Go to main content">Main content</a></li>
     </ul>
   </nav>
-  <nav id="main-nav">
+  <nav id="main-nav" aria-label="Main menu">
     <div id="menu">
       <div>
         <a href="${pageNames.HOME.url}"
