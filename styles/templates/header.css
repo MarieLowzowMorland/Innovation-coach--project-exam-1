@@ -203,7 +203,7 @@
   #main-nav li a.active + .circle,
   #main-nav li a:hover + .circle,
   #main-nav li a:focus + .circle {
-    background-color: var(--primary);
+    background-color: var(--secondary);
     box-shadow: var(--thick-shadow);
     height: 0.8rem;
     width: 0.8rem;
