@@ -6,7 +6,7 @@ const addUserMessage = (message) => {
   }
 
   const messagesContainer = document.getElementById("user-messages");
-  messagesContainer.insertAdjacentHTML("afterbegin", `<div><p>${message}</p></div>`);
+  messagesContainer.insertAdjacentHTML("afterbegin", `<div role="dialog" aria-live="asertive" ><p>${message}</p></div>`);
   const newMessageElement = messagesContainer.firstChild;
   setTimeout(() => newMessageElement.remove(), 3000);
 };
