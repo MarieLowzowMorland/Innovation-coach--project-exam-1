@@ -55,7 +55,9 @@ const toggleMenu = (event) => {
   document.getElementById("menu").classList.toggle("open-menu");
 };
 
-let playing = true;
+const mediaQueryForReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const shouldStartWithVideoPaused = mediaQueryForReducedMotion && mediaQueryForReducedMotion.matches;
+let playing = !shouldStartWithVideoPaused;
 const toggleVideo = (event) => {
   const videControl = document.getElementById("video-control");
   const video = document.getElementById("homepage-video");
@@ -177,7 +179,7 @@ const homePageTemplate = () => /*template*/ `
           </div>
         <button id="video-control" aria-label="Pause background video.">${Pause()}</button>
       </div>
-      <video id="homepage-video" width="320" height="240" autoplay muted loop playsinline src="videos/homepage-video.mp4" poster="images/banner.jpg">
+      <video id="homepage-video" width="320" height="240" ${shouldStartWithVideoPaused ? "" : "autoplay"} muted loop playsinline src="videos/homepage-video.mp4" poster="images/banner.jpg">
         Your browser does not support the video tag.
       </video>
     </header>`;
