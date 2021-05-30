@@ -80,6 +80,7 @@ const addHeaderForPage = (selectedPage) => {
     .insertAdjacentHTML("beforebegin", headerTemplate(selectedPage));
 
   document.querySelector("#menu button").addEventListener("click", toggleMenu);
+  document.getElementById("close-menu").addEventListener("click", toggleMenu);
   stickyNav();
   if (selectedPage === pageNames.HOME) {
     const bannerCircle = document.querySelector("header .banner-circle");
@@ -161,6 +162,7 @@ const navTemplate = (selectedPage) => {
         ${link(selectedPage, pageNames.ALL_POSTS)}
         ${link(selectedPage, pageNames.ABOUT)}
         ${link(selectedPage, pageNames.CONTACT)}
+        <button id="close-menu">Close menu</button>
       </ul>
     </div>
   </nav>`

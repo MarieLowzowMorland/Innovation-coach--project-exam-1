@@ -117,6 +117,31 @@
   color: var(--secondary);
 }
 
+#close-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+#close-menu:focus {
+  clip: auto;
+  font-weight: bold;
+  color: var(--secondary);
+  box-sizing: border-box;
+  padding: 15px;
+  padding-top: calc(15px + 0.4rem);
+  height: 3.4rem;
+  left: auto;
+  top: auto;
+  width: 100%;
+  text-align: left;
+  border-style: none;
+  font-size: 1rem;
+  justify-content: flex-start;
+  
+}
+
 #skiplink ul{ 
   list-style: none;
   margin: 0;
@@ -144,6 +169,8 @@
   height: auto;
   width: auto;
 }
+
+
 
 @media screen and (min-width: 768px) {
   .homepage #main-nav {
