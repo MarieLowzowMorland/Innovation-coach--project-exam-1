@@ -3,7 +3,7 @@ import addFooterForPage from "../templates/footer.js";
 import postToHtml from "../components/post.js";
 import addSearchbarTo from "../components/searchbar.js";
 import createCarousel from "../components/postCarousel.js";
-import { findPosts } from "../data/dataFromApi.js";
+import { findPosts } from "../api/posts.js";
 
 addHeaderForPage(pageNames.HOME);
 addFooterForPage();

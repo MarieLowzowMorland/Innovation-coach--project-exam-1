@@ -2,7 +2,7 @@ import addHeaderForPage, { pageNames } from "../templates/header.js";
 import addFooterForPage from "../templates/footer.js";
 import addValidationToForm from "../components/formValidation.js";
 import addUserMessage from "../components/userMessage.js";
-import { sendContactForm } from "../data/dataFromApi.js";
+import { sendContactForm } from "../api/contact.js";
 
 addHeaderForPage(pageNames.CONTACT);
 addFooterForPage();

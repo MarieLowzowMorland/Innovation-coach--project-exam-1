@@ -1,6 +1,6 @@
 import { pageNames } from "../templates/header.js";
 import { Search, ArrowDropdown } from "../templates/svgIcons.js";
-import { findCategoriesWithPosts } from "../data/dataFromApi.js";
+import { findCategoriesWithPosts } from "../api/posts.js";
 
 const searchbarTemplate = () => /*template*/`
   <form id="search-container" action="${pageNames.ALL_POSTS.url}">

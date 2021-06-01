@@ -2,7 +2,7 @@ import addHeaderForPage, { pageNames } from "../templates/header.js";
 import addFooterForPage from "../templates/footer.js";
 import postToHtml from "../components/post.js";
 import addSearchbarTo from "../components/searchbar.js";
-import { findPosts } from "../data/dataFromApi.js";
+import { findPosts } from "../api/posts.js";
 import { SadFace } from "../templates/svgIcons.js";
 
 addHeaderForPage(pageNames.ALL_POSTS);
@@ -12,6 +12,10 @@ const searchParameters = new URLSearchParams(location.search);
 
 const topic = searchParameters.get("topic");
 const search = searchParameters.get("text");
+
+if (topic || search) {
+  document.querySelector("h1").innerText = "Search results";
+} 
 
 let fetchingPosts = true;
 let pageNumber = 1;

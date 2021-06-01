@@ -1,7 +1,9 @@
 import addHeaderForPage, { pageNames } from "../templates/header.js";
 import addFooterForPage from "../templates/footer.js";
-import { findPostById } from "../data/dataFromApi.js";
+import { findPostById } from "../api/posts.js";
+import { sendCommentForm } from "../api/comment.js";
 import modal from "../components/modal.js";
+import addValidationToForm from "../components/formValidation.js";
 
 addHeaderForPage(pageNames.POST);
 addFooterForPage();
@@ -9,11 +11,11 @@ addFooterForPage();
 const postId = new URLSearchParams(location.search).get("id");
 
 const postToHtml = (post) => {
-  const { dateString, title, content, summary, featuredImage } = post;
+  const { id, dateString, title, content, summary, featuredImage } = post;
   const { alt_text, src, caption } = featuredImage;
 
   return /*template*/`
-    <div>
+    <div id="post-content">
       <div class="reverse-column-order">
         <h1>${title}</h1>
         <p class="date">${dateString}</p>
@@ -26,6 +28,47 @@ const postToHtml = (post) => {
         </figure>
       </div>
       ${content}
+    </div>
+    <div id="comment">
+      <section>
+        <h2>Comment</h2>
+        <p>What is your opinion on the topic? Please write a comment.</p>
+        <p>The message field is required, names are encouraged and will be visible to other users. Your e-mail will be kept confidentially and will only be used to contact you if I have any questions regarding your comment.</p>
+      
+        <form id="comment-form" novalidate>
+          <div>
+            <label for="author">Name</label>
+            <input 
+              type="text" 
+              name="author_name" 
+              id="author" />
+          </div>
+
+          <div>
+            <label for="e-mail">E-mail</label>
+            <input 
+              type="email" 
+              name="author_email" 
+              id="e-mail" />
+          </div>
+
+          <input 
+            value="${id}"
+            type="hidden" 
+            name="post" 
+            id="post-number"/>
+
+          <div>
+            <label for="comment">Message (required)</label>
+            <textarea
+              name="content"
+              id="comment"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" >Post comment</button>
+        </form>
+      </section>
     </div>
   `;
 };
@@ -99,6 +142,9 @@ const addPostToHtml = (post) => {
   document.title = `${post.title} | Innovation Coach`
   resizeIframes();
   addImageEvents();
+  addValidationToForm("comment-form", async () => {
+    return await sendCommentForm(document.getElementById("comment-form"));
+  });
 };
 
 findPostById(postId).then(addPostToHtml);

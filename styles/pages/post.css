@@ -3,10 +3,12 @@
 @import "../common/layouts.css";
 @import "../common/loader.css";
 @import "../components/modal.css";
+@import "../components/buttons.css";
+@import "../components/form.css";
 @import "../templates/header.css";
 @import "../templates/footer.css";
 
-main {
+#post-content {
   width: calc(100vw - 40px);
   max-width: 35rem;
   margin: 0 20px;
@@ -79,14 +81,39 @@ figcaption {
 }
 
 .summary > p:first-child {
-  border: 1px solid var(--text-primary);
+  border: 1px solid var(--bg-secondary);
   border-left: 0;
   border-right: 0;
   padding: 15px 0;
 }
 
+#comment {
+  background-color: var(--bg-secondary);
+  padding: 40px 0;
+}
+
+#comment section {
+  width: calc(100vw - 40px);
+  max-width: 35rem;
+  margin: 0 auto;
+}
+
+#comment input,
+#comment textarea{
+  background-color: var(--bg-primary);
+}
+
+#comment textarea{
+  padding: 20px;
+}
+
+footer {
+  background-color: var(--bg-secondary);
+  margin-top: 0;
+}
+
 @media screen and (min-width: 35rem) {
-  main {
+  #post-content {
     margin: 0 auto;
   }
 }
