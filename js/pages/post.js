@@ -1,7 +1,7 @@
 import addHeaderForPage, { pageNames } from "../templates/header.js";
 import addFooterForPage from "../templates/footer.js";
 import { findPostById } from "../api/posts.js";
-import { sendCommentForm } from "../api/comment.js";
+import { sendCommentForm, findCommentsForPost } from "../api/comment.js";
 import modal from "../components/modal.js";
 import addValidationToForm from "../components/formValidation.js";
 
@@ -15,23 +15,27 @@ const postToHtml = (post) => {
   const { alt_text, src, caption } = featuredImage;
 
   return /*template*/`
-    <div id="post-content">
-      <div class="reverse-column-order">
+    <article id="post-content">
+      <header class="reverse-column-order">
         <h1>${title}</h1>
         <p class="date">${dateString}</p>
-      </div>
-      <div class="summary">
+      </header>
+      <section class="summary">
         ${summary}
         <figure class="wp-block-image">
           <img alt="${alt_text}" src="${src}"/>
           <figcaption>${caption}</figcaption>
         </figure>
-      </div>
+      </section>
       ${content}
-    </div>
+    </article>
+    <section>
+      <h2>Comments</h2>
+      <div id="comments"></div>
+    </section>
     <div id="comment">
       <section>
-        <h2>Comment</h2>
+        <h2>Share your opinion</h2>
         <p>What is your opinion on the topic? Please write a comment.</p>
         <p>The message field is required, names are encouraged and will be visible to other users. Your e-mail will be kept confidentially and will only be used to contact you if I have any questions regarding your comment.</p>
       
@@ -59,10 +63,10 @@ const postToHtml = (post) => {
             id="post-number"/>
 
           <div>
-            <label for="comment">Message (required)</label>
+            <label for="comment-content">Message (required)</label>
             <textarea
               name="content"
-              id="comment"
+              id="comment-content"
               required
             ></textarea>
           </div>
@@ -135,6 +139,24 @@ const resizeIframes = () => {
   });
 };
 
+const commentToHtml = (comment) => {
+  const { name, date, content } = comment;
+  return /*template*/`
+    <article>
+      <header><p>${name}</p></header>
+      ${content}
+      <footer><p>Posted: ${date}</p></footer>
+    </article>
+  `;
+}
+
+const fetchComments = async () => {
+  const comments = await findCommentsForPost(postId);
+  const htmlComments = comments.map(commentToHtml).join("");
+  document.getElementById("comments").innerHTML = "";
+  document.getElementById("comments").insertAdjacentHTML("afterbegin", htmlComments);
+}
+
 const addPostToHtml = (post) => {
   document.querySelector("main").classList.remove("loading");
   document.getElementById("loader").remove();
@@ -142,6 +164,7 @@ const addPostToHtml = (post) => {
   document.title = `${post.title} | Innovation Coach`
   resizeIframes();
   addImageEvents();
+  fetchComments();
   addValidationToForm("comment-form", async () => {
     return await sendCommentForm(document.getElementById("comment-form"));
   });

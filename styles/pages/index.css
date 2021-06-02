@@ -166,7 +166,7 @@ main {
   width: 100%;
 }
 
-main section {
+main > section {
   max-width: 930px;
   margin: 0 auto;
 }
