@@ -95,6 +95,7 @@
   width: 100%;
 }
 
+#main-nav li.borderless,
 #main-nav li:last-child {
   border-bottom: none;
 }
@@ -126,6 +127,7 @@
 
 #close-menu:focus {
   clip: auto;
+  position: static;
   font-weight: bold;
   color: var(--secondary);
   box-sizing: border-box;

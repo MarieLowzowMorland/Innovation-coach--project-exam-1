@@ -105,7 +105,7 @@ const addHeaderForPage = (selectedPage) => {
   }
 };
 
-const link = (selectedPage, linkToPage) => {
+const link = (selectedPage, linkToPage, liClassName) => {
   let classNames = "discrete-button";
   let ariaCurrentAttr = "";
   if( selectedPage === linkToPage ){
@@ -114,7 +114,7 @@ const link = (selectedPage, linkToPage) => {
   }
   
   return /*template*/ `
-  <li>
+  <li class="${liClassName || ""}">
     <a href="${linkToPage.url}" 
       data-text="${linkToPage.name}"
       ${ariaCurrentAttr}
@@ -161,8 +161,8 @@ const navTemplate = (selectedPage) => {
       <ul>
         ${link(selectedPage, pageNames.ALL_POSTS)}
         ${link(selectedPage, pageNames.ABOUT)}
-        ${link(selectedPage, pageNames.CONTACT)}
-        <button id="close-menu">Close menu</button>
+        ${link(selectedPage, pageNames.CONTACT, "borderless")}
+        <li><button id="close-menu">Close menu</button></li>
       </ul>
     </div>
   </nav>`
