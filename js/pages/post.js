@@ -29,7 +29,7 @@ const postToHtml = (post) => {
       </section>
       ${content}
     </article>
-    <section>
+    <section id="comments-section">
       <h2>Comments</h2>
       <div id="comments"></div>
     </section>
@@ -143,14 +143,20 @@ const commentToHtml = (comment) => {
   const { name, date, content } = comment;
   return /*template*/`
     <article>
-      <header><p>${name}</p></header>
+      <header><p>${name}</p><span>${date}</span></header>
       ${content}
-      <footer><p>Posted: ${date}</p></footer>
     </article>
   `;
 }
 
 const fetchComments = async () => {
+  document.getElementById("comments").insertAdjacentHTML("afterbegin", /*template*/
+  `"<div id="loader" role="img" aria-label="Loading page.">
+      <span id="fisrt-circle"></span>
+      <div id="line-wrapper"><span id="line"></span></div>
+      <span id="second-circle"></span>
+    </div>"`);
+
   const comments = await findCommentsForPost(postId);
   const htmlComments = comments.map(commentToHtml).join("");
   document.getElementById("comments").innerHTML = "";
@@ -166,7 +172,11 @@ const addPostToHtml = (post) => {
   addImageEvents();
   fetchComments();
   addValidationToForm("comment-form", async () => {
-    return await sendCommentForm(document.getElementById("comment-form"));
+    const formSentSuccsessfully = await sendCommentForm(document.getElementById("comment-form"));
+    if(formSentSuccsessfully){
+      fetchComments();
+    }
+    return formSentSuccsessfully;
   });
 };
 

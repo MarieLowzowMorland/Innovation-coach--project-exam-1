@@ -112,6 +112,45 @@ footer {
   margin-top: 0;
 }
 
+#comments-section {
+  background-color: var(--bg-secondary);
+  padding: 20px;
+  border-bottom: solid var(--primary);
+}
+
+#comments article {
+  max-width: 35rem;
+  margin: 20px auto;
+  line-height: 1.5rem;
+  background-color: var(--bg-primary);
+  border-radius: 10px 10px 10px 0;
+  padding: 10px;
+  box-shadow: var(--thin-shadow);
+}
+
+#comments article header{
+  min-height: auto;
+}
+
+#comments article header p{
+  color: var(--secondary);
+  font-weight: bold;
+  margin: 0;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+#comments article header span{
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  font-family: var(--font-secondary);
+}
+
+
+#comments article > p {
+  margin: 5px 0;
+}
+
 @media screen and (min-width: 35rem) {
   #post-content {
     margin: 0 auto;

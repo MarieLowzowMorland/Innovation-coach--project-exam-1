@@ -91,6 +91,7 @@
 }
 
 
+
 @media screen and (min-width: 768px) {
   .post-wrapper + .post-wrapper {
     border-top: none;
