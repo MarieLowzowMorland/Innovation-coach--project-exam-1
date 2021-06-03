@@ -1,4 +1,5 @@
 import addHeaderForPage, { pageNames } from "../templates/header.js";
+import { Loader, removeLoader } from "../templates/loader.js"
 import addFooterForPage from "../templates/footer.js";
 import { findPostById } from "../api/posts.js";
 import { sendCommentForm, findCommentsForPost } from "../api/comment.js";
@@ -7,6 +8,7 @@ import addValidationToForm from "../components/formValidation.js";
 
 addHeaderForPage(pageNames.POST);
 addFooterForPage();
+document.getElementById("main").insertAdjacentHTML("afterbegin", Loader());
 
 const postId = new URLSearchParams(location.search).get("id");
 
@@ -150,12 +152,7 @@ const commentToHtml = (comment) => {
 }
 
 const fetchComments = async () => {
-  document.getElementById("comments").insertAdjacentHTML("afterbegin", /*template*/
-  `"<div id="loader" role="img" aria-label="Loading page.">
-      <span id="fisrt-circle"></span>
-      <div id="line-wrapper"><span id="line"></span></div>
-      <span id="second-circle"></span>
-    </div>"`);
+  document.getElementById("comments").insertAdjacentHTML("afterbegin", Loader());
 
   const comments = await findCommentsForPost(postId);
   const htmlComments = comments.map(commentToHtml).join("");
@@ -164,8 +161,7 @@ const fetchComments = async () => {
 }
 
 const addPostToHtml = (post) => {
-  document.querySelector("main").classList.remove("loading");
-  document.getElementById("loader").remove();
+  removeLoader();
   document.querySelector("main").insertAdjacentHTML("afterBegin", postToHtml(post));
   document.title = `${post.title} | Innovation Coach`
   resizeIframes();

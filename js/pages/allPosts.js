@@ -1,4 +1,5 @@
 import addHeaderForPage, { pageNames } from "../templates/header.js";
+import { Loader, removeLoader } from "../templates/loader.js";
 import addFooterForPage from "../templates/footer.js";
 import postToHtml from "../components/post.js";
 import addSearchbarTo from "../components/searchbar.js";
@@ -7,6 +8,7 @@ import { SadFace } from "../templates/svgIcons.js";
 
 addHeaderForPage(pageNames.ALL_POSTS);
 addFooterForPage();
+document.getElementById("main").insertAdjacentHTML("afterbegin", Loader());
 
 const searchParameters = new URLSearchParams(location.search);
 
@@ -31,8 +33,10 @@ const fetchMorePosts = async (event) => {
   }
 
   fetchingPosts = true;
+  document.getElementById("posts-container").insertAdjacentHTML("beforeend", Loader());
   const postsResponse = await findPosts(++pageNumber, topic, search);
   const { totalPages, posts } = postsResponse;
+  removeLoader()
   
   if(!posts || !posts.length){
     hideFetchMorePostsButton();
@@ -63,7 +67,7 @@ const addNoResultMessage = () => {
 const addPostsToHtml = (postsResponse) => {
   const { totalPages, posts } = postsResponse;
   document.querySelector("main").classList.remove("loading");
-  document.getElementById("loader").remove();
+  removeLoader();
   addSearchbarTo(document.getElementById("posts-container"), search, topic);
 
   if(!posts || !posts.length){

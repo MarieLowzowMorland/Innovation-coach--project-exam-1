@@ -1,4 +1,5 @@
 import addHeaderForPage, { pageNames } from "../templates/header.js";
+import { Loader, removeLoader } from "../templates/loader.js"
 import addFooterForPage from "../templates/footer.js";
 import postToHtml from "../components/post.js";
 import addSearchbarTo from "../components/searchbar.js";
@@ -7,6 +8,7 @@ import { findPosts } from "../api/posts.js";
 
 addHeaderForPage(pageNames.HOME);
 addFooterForPage();
+document.getElementById("main").insertAdjacentHTML("afterbegin", Loader());
 
 const addFirstPostToHtml = (firstPost) => {
   if(!firstPost){
@@ -19,7 +21,7 @@ const addFirstPostToHtml = (firstPost) => {
 
 findPosts().then((postsResponse) => {
   document.querySelector("main").classList.remove("loading");
-  document.getElementById("loader").remove();
+  removeLoader();
   addSearchbarTo(document.getElementById("first-post-container"));
 
   const posts = postsResponse.posts;
