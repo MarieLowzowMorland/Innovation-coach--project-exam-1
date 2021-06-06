@@ -73,6 +73,32 @@ const toggleVideo = (event) => {
   playing = !playing;
 };
 
+const adaptToAvailableHeight = (fistRun) => {
+  const bannerCircle = document.querySelector("header .banner-circle");
+  const homepageVideo = document.getElementById("homepage-video");
+  const videoControl = document.getElementById("video-control");
+  const initialAvailableWidth = window.innerWidth;
+  let initialAvailableHeight = window.innerHeight;
+  if (initialAvailableHeight > 1500) {
+    initialAvailableHeight = 1500;
+  }
+
+  if(fistRun){
+    bannerCircle.addEventListener("click", toggleVideo);
+    homepageVideo.addEventListener("click", toggleVideo);
+    videoControl.addEventListener("click", toggleVideo);
+  }
+
+  homepageVideo.style.height = `${initialAvailableHeight}px`;
+  videoControl.style.top = `calc(${initialAvailableHeight}px - 5rem)`;
+  bannerCircle.style.height = `${initialAvailableHeight}px`;
+  if (initialAvailableWidth >= 768) {
+    bannerCircle.style.marginTop = `${initialAvailableHeight / 2}px`;
+  } else {
+    bannerCircle.style.marginTop = "0";
+  }
+}
+
 const addHeaderForPage = (selectedPage) => {
   document
     .querySelector("main")
@@ -82,25 +108,8 @@ const addHeaderForPage = (selectedPage) => {
   document.getElementById("close-menu").addEventListener("click", toggleMenu);
   stickyNav();
   if (selectedPage === pageNames.HOME) {
-    const bannerCircle = document.querySelector("header .banner-circle");
-    const homepageVideo = document.getElementById("homepage-video");
-    const videoControl = document.getElementById("video-control");
-    const initialAvailableWidth = window.innerWidth;
-    let initialAvailableHeight = window.innerHeight;
-    if (initialAvailableHeight > 1500) {
-      initialAvailableHeight = 1500;
-    }
-
-    bannerCircle.addEventListener("click", toggleVideo);
-    homepageVideo.addEventListener("click", toggleVideo);
-    videoControl.addEventListener("click", toggleVideo);
-
-    homepageVideo.style.height = `${initialAvailableHeight}px`;
-    videoControl.style.top = `calc(${initialAvailableHeight}px - 5rem)`;
-    bannerCircle.style.height = `${initialAvailableHeight}px`;
-    if (initialAvailableWidth >= 768) {
-      bannerCircle.style.marginTop = `${initialAvailableHeight / 2}px`;
-    }
+    adaptToAvailableHeight(true);
+    window.addEventListener("resize", adaptToAvailableHeight);
   }
 };
 
