@@ -17,26 +17,20 @@ section p {
   margin: 1.15rem auto;
 }
 
-section > div[role="img"] {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
 .section-wrapper:nth-child(even) {
   background-color: var(--bg-secondary);
   padding-bottom: 50px;
 }
 
 #entrepreneurial-team {
-  background-image: url(../../images/together.jpg);
+  object-fit: cover;
   width: 100vw;
   max-width: 100%;
   height: calc(100vw / 3 * 2);
 }
 
 #author {
-  background-image: url(../../images/whoAmI.jpg);
+  object-fit: cover;
   height: calc(100vw / 2 * 3);
   max-height: 500px;
 }

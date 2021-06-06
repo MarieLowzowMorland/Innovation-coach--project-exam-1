@@ -13,7 +13,7 @@ const postToHtml = (post) => {
           <a href="post.html?id=${id}" aria-label="Read more about ${title}" class="link">Read more </a>
         </section>
         <!-- No alt text for posts in a "list" context -->
-        <div role="img" 
+        <div 
           class="post-image-wrapper" 
           style='background-image: url("${featuredImage.src}")'>
         </div>
