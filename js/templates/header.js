@@ -74,6 +74,7 @@ const toggleVideo = (event) => {
 };
 
 const adaptToAvailableHeight = (fistRun) => {
+  const clipBanner = document.querySelector("header .clip-banner");
   const bannerCircle = document.querySelector("header .banner-circle");
   const homepageVideo = document.getElementById("homepage-video");
   const videoControl = document.getElementById("video-control");
@@ -89,6 +90,7 @@ const adaptToAvailableHeight = (fistRun) => {
     videoControl.addEventListener("click", toggleVideo);
   }
 
+  clipBanner.style.height = `${initialAvailableHeight}px`;
   homepageVideo.style.height = `${initialAvailableHeight}px`;
   videoControl.style.top = `calc(${initialAvailableHeight}px - 5rem)`;
   bannerCircle.style.height = `${initialAvailableHeight}px`;
@@ -179,19 +181,23 @@ const navTemplate = (selectedPage) => {
 const homePageTemplate = () => /*template*/ `
     <header class="homepage">
       ${navTemplate(pageNames.HOME)}
-      <div class="banner-content">
-        <div class="banner-circle">
-          <div>
-            <h1 class="blog-name">Innovation Coach</h1>
-            <p class="slogan">Helping you connect the dots</p>
-            <a class="cta" href="#first-post-container"> See newest articles ${ArrowDown()}</a>
+      <div class="clip-banner-shadow">
+        <div class="clip-banner">
+          <div class="banner-content">
+            <div class="banner-circle">
+              <div>
+                <h1 class="blog-name">Innovation Coach</h1>
+                <p class="slogan">Helping you connect the dots</p>
+                <a class="cta" href="#first-post-container"> See newest articles ${ArrowDown()}</a>
+              </div>
+              </div>
+            <button id="video-control" aria-label="Pause background video.">${Pause()}</button>
           </div>
-          </div>
-        <button id="video-control" aria-label="Pause background video.">${Pause()}</button>
+          <video id="homepage-video" width="320" height="240" ${shouldStartWithVideoPaused ? "" : "autoplay"} muted loop playsinline src="videos/homepage-video.mp4" poster="images/banner.jpg">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
-      <video id="homepage-video" width="320" height="240" ${shouldStartWithVideoPaused ? "" : "autoplay"} muted loop playsinline src="videos/homepage-video.mp4" poster="images/banner.jpg">
-        Your browser does not support the video tag.
-      </video>
     </header>`;
 
 const headerTemplate = (selectedPage) => {

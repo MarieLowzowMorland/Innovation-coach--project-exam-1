@@ -17,7 +17,6 @@ header video {
   height: 100vh;
   max-width: 100%;
   object-fit: cover;
-  box-shadow: var(--thin-shadow);
 }
 
 #video-control {
@@ -36,6 +35,17 @@ header video {
 #video-control:focus svg {
   height: 3rem;
   width: auto;
+}
+
+.clip-banner-shadow {
+  filter: drop-shadow(var(--thin-shadow));
+}
+
+.clip-banner {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 }
 
 .banner-content {
@@ -145,18 +155,18 @@ header video {
   }
 
   .blog-name {
-    font-size: 4rem;
-    line-height: 4rem;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
     margin: 0;
   }
 
   .slogan {
-    font-size: 1.5rem;
-    margin: 1.15rem 0 2rem;
+    font-size: 1rem;
+    margin: 0.7rem 0 0.5rem;
   }
 
   .cta {
-    margin: 3rem auto;
+    margin: 32px auto;
   }
 }
 
