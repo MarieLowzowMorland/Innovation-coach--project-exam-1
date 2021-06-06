@@ -3,6 +3,7 @@
   z-index: 1001;
   top: 0;
   width: 100vw;
+  max-width: 100%;
   background-color: var(--bg-primary);
   box-shadow: var(--thin-shadow);
 }

@@ -1,5 +1,4 @@
-import { HamburgerMenu, Logo, Play, Pause } from "../templates/svgIcons.js";
-import { ArrowDown } from "../templates/svgIcons.js";
+import { HamburgerMenu, Logo, Play, Pause, ArrowDown } from "../templates/svgIcons.js";
 
 export const pageNames = {
   HOME: {
